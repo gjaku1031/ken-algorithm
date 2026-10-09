@@ -16,7 +16,7 @@ public class sw5644 {
     static int[] arr_A;
     static int[] arr_B;
 
-    // 상우하좌
+    // Up, right, down, left
     static int[][] dir = {{0, 0}, {0, -1}, {1,0}, {0, 1}, {-1, 0}};
     static List<Charge>[][] map;
 
@@ -59,12 +59,12 @@ public class sw5644 {
             for (int i = 0; i < A; i++) {
                 st = new StringTokenizer(br.readLine());
 
-                // 중심
+                // Center
                 int x = Integer.parseInt(st.nextToken());
                 int y = Integer.parseInt(st.nextToken());
 
-                int c = Integer.parseInt(st.nextToken()); // 충전 범위
-                int p = Integer.parseInt(st.nextToken()); // 성능
+                int c = Integer.parseInt(st.nextToken()); // Charging range
+                int p = Integer.parseInt(st.nextToken()); // Performance
                 setDia(x, y, c, p, i);
             }
 
@@ -76,7 +76,7 @@ public class sw5644 {
             B_y = 10;
 
             for (int i = -1; i < M; i++) {
-                //이동
+                //Move
                 if (i != -1) {
                     A_x += dir[arr_A[i]][0];
                     A_y += dir[arr_A[i]][1];

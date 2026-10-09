@@ -20,7 +20,7 @@ public class bj22866 {
     static int[] count_right;
 
     public static void main(String[] args) throws IOException {
-        // 입력
+        // Input
         N = Integer.parseInt(br.readLine());
         arr = new int[N + 1];
         nearest_left = new int[N + 1];
@@ -36,7 +36,7 @@ public class bj22866 {
 
         Stack<Integer> stack = new Stack<>();
 
-        // 왼쪽
+        // left
         for (int i = 1; i <= N; i++) {
             while (!stack.isEmpty() && arr[stack.peek()] <= arr[i]) {
                 stack.pop();
@@ -47,7 +47,7 @@ public class bj22866 {
         }
         stack.clear();
 
-        // 오른쪽
+        // right
         for (int i = N; i >= 1; i--) {
             while (!stack.isEmpty() && arr[stack.peek()] <= arr[i]) {
                 stack.pop();

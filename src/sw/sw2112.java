@@ -13,7 +13,7 @@ public class sw2112 {
     static int D, W, K;
     static int[][] film;
 
-    static int best; // 최소 약품 수
+    static int best; // Minimum number of chemical injections
 
     public static void main(String[] args) throws IOException {
         T = Integer.parseInt(br.readLine());
@@ -51,22 +51,22 @@ public class sw2112 {
             }
             return;
         }
-        // 1) r행 그대로
+        // 1) Leave row r as is
         dfs(row + 1, used);
 
-        // 현재 행 백업 (값 복원용)
+        // Back up current row (for restoring values)
         int[] backup = film[row].clone();
 
-        // 2) r행 전부 0
+        // 2) Set all of row r to 0
         for (int j = 1; j <= W; j++) film[row][j] = 0;
         dfs(row + 1, used + 1);
-        // 복원
+        // Restore
         for (int j = 1; j <= W; j++) film[row][j] = backup[j];
 
-        // 3) r행 전부 1
+        // 3) Set all of row r to 1
         for (int j = 1; j <= W; j++) film[row][j] = 1;
         dfs(row + 1, used + 1);
-        // 복원
+        // Restore
         for (int j = 1; j <= W; j++) film[row][j] = backup[j];
     }
 

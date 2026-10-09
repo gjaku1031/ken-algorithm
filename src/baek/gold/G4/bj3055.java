@@ -48,7 +48,7 @@ public class bj3055 {
         while (!queue.isEmpty()) {
             count++;
 
-            // 홍수남
+            // flood spreads
             int size = flood.size();
 
             for (int s = 0; s < size; s++) {

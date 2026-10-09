@@ -16,7 +16,7 @@ public class bj2884 {
 
     }
 
-    // 왜 static class?
+    // Why static class?
     static class Clock {
         int hour;
         int minute;

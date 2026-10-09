@@ -41,10 +41,10 @@ public class sw1240 {
             code = null;
             input();
 
-            if (code != null && code.length() == 56) { // 코드를 찾았고, 유효한 길이인지 확인
+            if (code != null && code.length() == 56) { // Code found; check that the length is valid
                 decodeAndPrint(tc);
             } else {
-                // 코드를 못 찾았거나 유효하지 않은 경우 (문제 조건상 항상 찾아야 함)
+                // Code not found or invalid (by the problem constraints it should always be found)
                 System.out.println("#" + tc + " " + 0);
             }
         }
@@ -56,7 +56,7 @@ public class sw1240 {
         for (int i = 0; i < N; i++) {
             String currentLine = br.readLine();
 
-            if (found) { //나머지 줄 읽고 버리기
+            if (found) { //Read and discard the remaining lines
                 continue;
             }
 

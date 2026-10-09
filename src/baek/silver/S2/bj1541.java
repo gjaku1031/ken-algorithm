@@ -20,7 +20,7 @@ public class bj1541 {
                 temp += Integer.parseInt(add.nextToken());
             }
 
-            //처음 숫자에서 이어지는 덧셈
+            //additions following the first number
             if (sum == Integer.MAX_VALUE) {
                 sum = temp;
             } else {

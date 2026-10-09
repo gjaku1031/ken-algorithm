@@ -20,10 +20,10 @@ public class sw13038 {
         for (int tc = 1; tc <= T; tc++) {
             n = Integer.parseInt(br.readLine());
 
-            int weekCount = 0; // 주당 수업 횟수
+            int weekCount = 0; // Classes per week
             day = new int[7];
 
-            // 입력
+            // Input
             st = new StringTokenizer(br.readLine());
             for (int i = 0; i < 7; i++) {
                 day[i] = Integer.parseInt(st.nextToken());
@@ -32,7 +32,7 @@ public class sw13038 {
                 }
             }
 
-            // 마지막주 남기고 계산
+            // Compute all but the last week
             int fullWeeks = n / weekCount;
             if (n % weekCount == 0) {
                 fullWeeks--;
@@ -52,7 +52,7 @@ public class sw13038 {
                 int tempRemain = remain;
                 int currentDay = i;
 
-                // 모든 시작 요일 고려
+                // Consider every starting weekday
                 while (tempRemain > 0) {
                     if (day[currentDay % 7] == 1) {
                         tempRemain--;

@@ -40,7 +40,7 @@ public class bj16953 {
     }
 }
 /*
- public class Main { // 클래스 이름은 Main으로 변경
+ public class Main { // rename class to Main
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
@@ -54,7 +54,7 @@ public class bj16953 {
             } else if (B % 2 == 0) {
                 B /= 2;
             } else {
-                // 두 연산 모두 불가능하면 A로 만들 수 없음
+                // if neither operation applies, A cannot be reached
                 break;
             }
             count++;

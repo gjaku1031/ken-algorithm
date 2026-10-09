@@ -17,7 +17,7 @@ public class sw1861 {
     static int currentMax;
     static int result_room;
 
-    //상 하 좌 우
+    //up down left right
     static int[] dc = {-1, 1, 0, 0};
     static int[] dr = {0, 0, -1, 1};
     static boolean[][] visited;

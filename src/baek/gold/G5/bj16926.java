@@ -8,7 +8,7 @@ import java.util.StringTokenizer;
 public class bj16926 {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static StringTokenizer st;
-    static int[][] dir = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}}; // 우, 하, 좌, 상
+    static int[][] dir = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}}; // right, down, left, up
     static int N, M, R;
     static int[][] arr;
 

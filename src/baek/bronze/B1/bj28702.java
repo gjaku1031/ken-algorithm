@@ -23,7 +23,7 @@ public class bj28702 {
 
     static boolean isNumeric(String str) {
         try {
-            Double.parseDouble(str); // 정수든 실수든 숫자로 변환 시도
+            Double.parseDouble(str); // try parsing as a number, integer or real
             return true;
         } catch (NumberFormatException e) {
             return false;

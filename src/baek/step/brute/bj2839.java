@@ -20,13 +20,13 @@ public class bj2839 {
         for (int i = 0; true; i++) {
             x = i;
 
-            // y가 정수인지 확인 아니면 하위 명령 실행x
+            // Check if y is an integer; if not, skip the following statements
             if ((n - 3 * x) % 5 == 0) {
                 y = (n - 3 * x) / 5;
             } else {
                 continue;
             }
-            // y가 음수면 for 문 종료
+            // Exit the for loop if y is negative
             if (y < 0) {
                 break;
             }

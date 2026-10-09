@@ -210,7 +210,7 @@ Solutions: [Multiplication (1629)](src/baek/silver/S1/bj1629.java) · [Matrix Po
 ### Math
 - Primality test in O(√N), Sieve of Eratosthenes
 - Greatest common divisor with the Euclidean algorithm
-- Binomial coefficients with Pascal's triangle; modular inverse with Fermat's little theorem ([notes, Korean](src/baek/gold/G1/bj11401.md))
+- Binomial coefficients with Pascal's triangle; modular inverse with Fermat's little theorem ([notes](src/baek/gold/G1/bj11401.md))
 - Geometry: CCW, segment intersection, polygon area with the shoelace formula
 
 Solutions: [Goldbach Partition (17103)](src/baek/step/divMulPrimes2/bj17103.java) · [Street Trees (2485)](src/baek/step/divMulPrimes2/bj2485.java) · [Binomial Coefficient 2 (11051)](src/baek/silver/S2/bj11051.java) · [Binomial Coefficient 3 (11401)](src/baek/gold/G1/bj11401.java) · [CCW (11758)](src/baek/gold/G5/bj11758.java) · [Segment Intersection 1 (17386)](src/baek/gold/G3/bj17386.java) · [Polygon Area (2166)](src/baek/gold/G5/bj2166.java)

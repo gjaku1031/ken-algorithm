@@ -15,22 +15,22 @@ public class frog_journey {
     static int[][] plan;
 
     public static void main(String[] args) throws IOException {
-        init(); // 입력
+        init(); // Input
         for (int i = 0; i < Q; i++) {
             System.out.println(solve(i));
         }
     }
 
     static int solve(int journey_idx) {
-        // 시작점으로 초기화
+        // Initialize with the start point
         PriorityQueue<State> que = new PriorityQueue<>();
         que.offer(new State(0, plan[journey_idx][0], plan[journey_idx][1], 1));
         boolean[][][] visited = new boolean[N + 1][N + 1][6];
 
-        // 다익스트라 시작
+        // Start Dijkstra
         while (!que.isEmpty()) {
             State current = que.poll();
-            // 도착했을 때
+            // When the destination is reached
             if (current.r == plan[journey_idx][2] && current.c == plan[journey_idx][3])
                 return current.t;
 
@@ -38,19 +38,19 @@ public class frog_journey {
 
             visited[current.r][current.c][current.power] = true;
 
-            // 점프력 증가
+            // Increase jump power
             if (current.power < 5) {
                 int newPower = current.power + 1;
                 int timeForIncrease = newPower * newPower;
                 que.offer(new State(current.t + timeForIncrease, current.r, current.c, newPower));
             }
 
-            // 점프력 감소
+            // Decrease jump power
             for (int newPower = 1; newPower < current.power; newPower++) {
                 que.offer(new State(current.t + 1, current.r, current.c, newPower));
             }
 
-            // 점프
+            // Jump
             for (int i = 0; i < 4; i++) {
                 int nr = current.r + dir[i][0] * current.power;
                 int nc = current.c + dir[i][1] * current.power;

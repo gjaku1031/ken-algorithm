@@ -32,11 +32,11 @@ public class sw1493 {
 
             int S = nx + ny;
 
-            /** (계산식 풀이)
-             * 합이 S인 대각선 그룹의 점의 갯수 -> (S - 1)개
+            /** (Formula derivation)
+             * Number of points in the diagonal group with sum S -> (S - 1)
              * 
              * 1 + 2 + 3 + ... + (S - 2)
-             * == ((S - 2) * (S - 1) / 2) : 등차 수열 합
+             * == ((S - 2) * (S - 1) / 2) : arithmetic series sum
              */
             int resultValue = ((S - 2) * (S - 1) / 2) + nx;
 

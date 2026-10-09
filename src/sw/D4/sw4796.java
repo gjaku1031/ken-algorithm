@@ -17,7 +17,7 @@ public class sw4796 {
     public static void main(String[] args) throws IOException {
         T = sc.nextInt();
         for (int tc = 1; tc <= T; tc++) {
-            // 입력
+            // Input
             N = sc.nextInt();
 
             height = new int[N];
@@ -28,7 +28,7 @@ public class sw4796 {
             right_h = new int[N];
             left_h = new int[N];
 
-            // 로직
+            // Logic
             Deque<Integer> deque = new ArrayDeque<>();
             for (int i = 0; i < N; i++) {
                 while (!deque.isEmpty() && height[deque.peekLast()] < height[i]) {
@@ -58,7 +58,7 @@ public class sw4796 {
             for (int i = 0; i < N; i++) {
                 result += right_h[i] * left_h[i];
             }
-            // 출력
+            // Output
             sb.append("#" + tc + " " + result).append("\n");
         }
         System.out.println(sb);

@@ -15,7 +15,7 @@ public class bj24416 {
         System.out.println(count1 + " " + count2);
     }
 
-    // 재귀
+    // Recursion
     static int fibo1(int n) {
 
         if (n == 1 || n == 2) {

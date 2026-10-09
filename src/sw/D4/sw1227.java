@@ -13,7 +13,7 @@ public class sw1227 {
     static int T;
 
     static int[][] map;
-    static int[][] dir = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}}; // 상하좌우
+    static int[][] dir = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}}; // Up/down/left/right
     static boolean[][] visited;
 
     static int startR, startC, endR, endC;

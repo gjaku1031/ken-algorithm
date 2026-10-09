@@ -13,7 +13,7 @@ public class bj13300 {
     static int[][] arr = new int[7][2];
 
     public static void main(String[] args) throws IOException {
-        //입력
+        //input
         st = new StringTokenizer(br.readLine());
         N = Integer.parseInt(st.nextToken());
         K = Integer.parseInt(st.nextToken());
@@ -25,7 +25,7 @@ public class bj13300 {
             arr[cls][gen]++;
         }
 
-        //풀이
+        //solution
         int result = 0;
         for (int i = 1; i <= 6; i++) {
             for (int j = 0; j < 2; j++) {
@@ -37,20 +37,20 @@ public class bj13300 {
 
 }
 /*
-(정독)
-2박 3일 수학여행
-여러 학년 같은 장소
-1학년부터 6학년까지 학생들 묵을 방 배정
+(Read carefully)
+3-day, 2-night school trip
+multiple grades at the same place
+assign rooms for students from grade 1 to grade 6
 
-남학생끼리, 여학생끼리
-한 방에는 같은 학년의 학생 배정 -> 한 방에 한 명만 가능
+boys together, girls together
+each room holds students of the same grade -> a room may hold just one student
 
-한 방에 배정할 수 있는 최대 인원 수 K
+maximum number of students per room: K
 
-조건에 맞게 모든 학생을 배정하기 위해 필요한 방의 최소 개수를 구하라
+find the minimum number of rooms needed to assign all students under these conditions
 
 ==========================================================
-예시)
+Example)
  */
 
 /*

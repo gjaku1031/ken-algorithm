@@ -38,7 +38,7 @@ public class sw2814 {
                 int u = Integer.parseInt(st.nextToken());
                 int v = Integer.parseInt(st.nextToken());
 
-                //무방향
+                //Undirected
                 graph[u].add(v);
                 graph[v].add(u);
             }

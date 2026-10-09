@@ -43,7 +43,7 @@ public class bj17135 {
         System.out.println(answer);
     }
 
-    // 조합 (c1,c2,c3)에 대한 전체 시뮬레이션: 처치 수 반환
+    // full simulation for combination (c1,c2,c3): returns the number of kills
     static int simulate(int c1, int c2, int c3) {
         mapCopy = new int[N][M];
         for (int r = 0; r < N; r++) {

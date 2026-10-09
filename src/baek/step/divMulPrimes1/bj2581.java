@@ -14,11 +14,11 @@ public class bj2581 {
         int firstDec = 0;
         for (int i = min; i <= max; i++) {
 
-            // 첫번째 소수
+            // First prime
             if (isPrime(i) && sum == 0 && i != 1) {
                 firstDec = i;
                 sum += i;
-                // 두번째 소수
+                // Second prime
             } else if (isPrime(i) && i != 1) {
                 sum += i;
             }

@@ -40,7 +40,7 @@ public class bj11286 {
             } else if (Math.abs(this.num) < Math.abs(o.getAbsNum())) {
                 return -1;
             } else {
-                return Integer.compare(this.num, o.getAbsNum()); // Integer 메서드
+                return Integer.compare(this.num, o.getAbsNum()); // Integer method
             }
         }
     }

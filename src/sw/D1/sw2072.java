@@ -5,8 +5,8 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 /*
-   사용하는 클래스명이 Solution 이어야 하므로, 가급적 Solution.java 를 사용할 것을 권장합니다.
-   이러한 상황에서도 동일하게 java Solution 명령으로 프로그램을 수행해볼 수 있습니다.
+   The class name must be Solution, so using Solution.java is recommended.
+   Even so, you can run the program the same way with the java Solution command.
  */
 public class sw2072 {
 	public static void main(String args[]) throws Exception {

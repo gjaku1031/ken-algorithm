@@ -14,8 +14,8 @@ public class bj15552 {
             int a = Integer.parseInt(st.nextToken());
             int b = Integer.parseInt(st.nextToken());
             bw.write(String.valueOf(a + b));
-            bw.newLine(); // 줄넘김
+            bw.newLine(); // Newline
         }
-        bw.flush(); // 출력, 마지막에 한 번만 사용
+        bw.flush(); // Output; call only once at the end
     }
 }

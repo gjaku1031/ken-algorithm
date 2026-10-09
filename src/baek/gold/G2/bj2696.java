@@ -35,7 +35,7 @@ public class bj2696 {
                 else minHeap.add(num);
 
 
-                // 두 힙의 균형 맞추기 (maxHeap의 top은 항상 minHeap의 top보다 작거나 같아야 함)
+                // balance the two heaps (maxHeap's top must always be <= minHeap's top)
                 if (!minHeap.isEmpty() && maxHeap.peek() > minHeap.peek()) {
                     int val1 = maxHeap.poll();
                     int val2 = minHeap.poll();
@@ -43,7 +43,7 @@ public class bj2696 {
                     minHeap.add(val1);
                 }
 
-                // 전체 원소 개수가 홀수 -> 중앙값 리스트에 추가
+                // total element count is odd -> add to the median list
                 if ((i + 1) % 2 != 0) medians.add(maxHeap.peek());
 
             }

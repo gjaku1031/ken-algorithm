@@ -33,7 +33,7 @@ public class sw1868 {
                 }
             }
 
-            // 첫 번째 탐색 -> 지뢰 주변 숫자 계산.
+            // First pass -> compute numbers around mines.
             for (int i = 0; i < N; i++) {
                 for (int j = 0; j < N; j++) {
                     if (map[i][j] == -1) {
@@ -53,7 +53,7 @@ public class sw1868 {
                 }
             }
 
-            // 두번째 탐색 0 -> 0인부분 클릭(map[i][j] == -1)
+            // Second pass 0 -> click cells that are 0 (map[i][j] == -1)
             for (int i = 0; i < N; i++) {
                 for (int j = 0; j < N; j++) {
                     if (map[i][j] == -1 && !visited[i][j]) {
@@ -63,7 +63,7 @@ public class sw1868 {
                 }
             }
 
-            // 세번째 탐색 -> 나머지 처리
+            // Third pass -> handle the rest
             for (int i = 0; i < N; i++) {
                 for (int j = 0; j < N; j++) {
                     if (map[i][j] > 0 && !visited[i][j]) {

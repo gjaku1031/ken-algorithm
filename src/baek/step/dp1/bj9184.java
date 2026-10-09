@@ -35,13 +35,13 @@ public class bj9184 {
             int b = Integer.parseInt(st.nextToken());
             int c = Integer.parseInt(st.nextToken());
 
-            // 종료 조건
+            // Termination condition
             if (a == -1 && b == -1 && c == -1) {
                 break;
             }
 
             int result;
-            // 입력 값에 따른 결과 결정
+            // Determine result based on input values
             if (a <= 0 || b <= 0 || c <= 0) {
                 result = 1;
             } else if (a > 20 || b > 20 || c > 20) {

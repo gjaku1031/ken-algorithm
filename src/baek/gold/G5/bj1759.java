@@ -19,7 +19,7 @@ public class bj1759 {
     static StringBuilder result = new StringBuilder();
 
     public static void main(String[] args) throws IOException {
-        // 입력
+        // Input
         st = new StringTokenizer(br.readLine());
         L = Integer.parseInt(st.nextToken());
         C = Integer.parseInt(st.nextToken());
@@ -30,7 +30,7 @@ public class bj1759 {
             arr[i] = st.nextToken().charAt(0);
         }
 
-        // 정렬
+        // Sort
         Arrays.sort(arr);
         bt(0, 0, 0, 0);
         System.out.println(result);

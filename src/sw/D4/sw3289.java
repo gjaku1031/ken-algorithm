@@ -17,7 +17,7 @@ public class sw3289 {
     public static void main(String[] args) throws IOException {
         T = Integer.parseInt(br.readLine());
         for (int tc = 1; tc <= T; tc++) {
-            //입력
+            //Input
             st = new StringTokenizer(br.readLine());
             N = Integer.parseInt(st.nextToken());
             M = Integer.parseInt(st.nextToken());
@@ -37,7 +37,7 @@ public class sw3289 {
                 }
 
             }
-            //출력
+            //Output
             System.out.println("#" + tc + " " + result);
         }
     }
@@ -46,7 +46,7 @@ public class sw3289 {
         int[] parent;
         int[] rank;
 
-        // 생성자 -- init
+        // Constructor -- init
         UnionFind() {
             parent = new int[N + 1];
             rank = new int[N + 1];
@@ -66,14 +66,14 @@ public class sw3289 {
             int ra = find(a), rb = find(b);
             if (ra == rb) return false;
 
-            // rank 큰 쪽이 부모
+            // Higher rank becomes the parent
             if (rank[ra] < rank[rb]) {
                 parent[ra] = rb;
             } else if (rank[ra] > rank[rb]) {
                 parent[rb] = ra;
             } else {
                 parent[rb] = ra;
-                rank[ra]++; // 같은 높이였으니 한 단계 상승
+                rank[ra]++; // Same height, so increase by one
             }
             return true;
         }

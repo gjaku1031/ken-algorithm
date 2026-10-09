@@ -16,7 +16,7 @@ public class bj1193 {
             //System.out.println("Odd = " + N);
         }
     }
-    // n번째 대각선 줄의 최대 인덱스 찾기
+    // Find the max index of the n-th diagonal
     static int findMax(int n) {
         int max = 1;
         for (int i = 0; i < n; i++) {
@@ -25,7 +25,7 @@ public class bj1193 {
         return max;
     }
 
-    // N이 속해있는 대각선 줄 찾기
+    // Find the diagonal containing N
     static int findLine(int N) {
         for (int i = 1; true; i++) {
             if (findMax(i) <= N && N < findMax(i + 1)) {
@@ -35,9 +35,9 @@ public class bj1193 {
     }
 
 
-    // 홀수 대각선 세기
+    // Count along odd diagonal
     static void countOddIdx(int N) {
-        // 해당 대각선줄의 첫 분수
+        // First fraction of this diagonal
         int count = N - findMax(findLine(N));
         int mom = 1;
         int son = findLine(N) + 1 - mom;
@@ -48,9 +48,9 @@ public class bj1193 {
         System.out.println(son + "/" + mom);
     }
 
-    // 짝수 대각선 세기
+    // Count along even diagonal
     static void countEvenIdx(int N) {
-        // 해당 대각선줄의 첫 분수
+        // First fraction of this diagonal
         int count = N - findMax(findLine(N));
 
         int son = 1;

@@ -65,9 +65,9 @@ public class bj14891 {
 
 
         for (int i = 0; i < 4; i++) {
-            if (dir[i] == 1) { // 시계
+            if (dir[i] == 1) { // clockwise
                 magnet[i].addFirst(magnet[i].pollLast());
-            } else if (dir[i] == -1) { // 반시계
+            } else if (dir[i] == -1) { // counterclockwise
                 magnet[i].addLast(magnet[i].pollFirst());
             }
         }

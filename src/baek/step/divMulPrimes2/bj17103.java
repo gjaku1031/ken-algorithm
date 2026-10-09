@@ -11,7 +11,7 @@ public class bj17103 {
 
     public static void main(String[] args) throws IOException {
         T = Integer.parseInt(br.readLine());
-        boolean[] isNotPrime = new boolean[1000001]; // false 면 소수
+        boolean[] isNotPrime = new boolean[1000001]; // false means prime
         isNotPrime[0] = isNotPrime[1] = true;
 
         for (int i = 2; i < 1000; i++) {

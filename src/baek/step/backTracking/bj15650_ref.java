@@ -14,12 +14,12 @@ public class bj15650_ref {
         N = Integer.parseInt(input[0]);
         M = Integer.parseInt(input[1]);
 
-        BTC(1, 0, new int[M]); // 조합 함수 호출
+        BTC(1, 0, new int[M]); // Call the combination function
         System.out.print(sb);
     }
 
     static void BTC(int start, int depth, int[] result) {
-        if (depth == M) { // M개를 모두 선택한 경우
+        if (depth == M) { // When all M have been chosen
             for (int num : result) {
                 sb.append(num).append(" ");
             }
@@ -28,8 +28,8 @@ public class bj15650_ref {
         }
 
         for (int i = start; i <= N; i++) {
-            result[depth] = i; // 현재 숫자를 결과 배열에 추가
-            BTC(i + 1, depth + 1, result); // 다음 단계로 재귀 호출
+            result[depth] = i; // Add the current number to the result array
+            BTC(i + 1, depth + 1, result); // Recurse to the next step
         }
     }
 }

@@ -30,10 +30,10 @@ public class bj1912 {
 
 
         /*
-         i 번째 원소까지 고려했을 때, 다음 단계(i+1)를 위해 어떤 정보를 저장해야 할까 -> 이를 고민
-            - 이 문제에서는 i번째 원소를 반드시 포함하는 연속 부분 배열 중 합이 최대인 값을 아는 것이 중요
-            -> arr[i+1] 혼자서 새로운 연속 부분 배열을 시작
-            -> 또는, arr[i]로 끝나는 최대 연속 부분 배열에 arr[i+1]을 이여 붙여 더 큰 합을 만들 수 있는가
+         Having considered up to the i-th element, what info must be stored for the next step (i+1)? -> think about this
+            - Here, the key is knowing the max sum among contiguous subarrays that must include the i-th element
+            -> arr[i+1] starts a new contiguous subarray on its own
+            -> or, can appending arr[i+1] to the max contiguous subarray ending at arr[i] make a larger sum
          */
         for (int i = 1; i < n; i++) {
             dp[i] = Math.max(arr[i], dp[i - 1] + arr[i]);

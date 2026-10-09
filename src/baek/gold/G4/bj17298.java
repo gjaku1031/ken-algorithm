@@ -16,7 +16,7 @@ public class bj17298 {
     static int[] arr;
 
     public static void main(String[] args) throws IOException {
-        // 입력
+        // Input
         N = Integer.parseInt(br.readLine());
         arr = new int[N];
 

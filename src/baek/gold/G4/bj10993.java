@@ -27,14 +27,14 @@ public class bj10993 {
         }
         
 
-        // 초기 방향과 시작점 설정
+        // set the initial direction and starting point
         boolean isInitialUpward = (N % 2 == 1);
         int startRow = isInitialUpward ? 0 : height - 1;
         int startCol = width / 2;
 
         draw(N, startRow, startCol, isInitialUpward);
 
-        // 결과 출력
+        // print the result
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < height; i++) {
             int lastStarIndex = -1;
@@ -54,11 +54,11 @@ public class bj10993 {
     }
 
     /**
-     * 재귀적으로 별을 그리는 함수
-     * @param n 현재 레벨
-     * @param r 현재 레벨 삼각형의 꼭짓점 행(row) 좌표
-     * @param c 현재 레벨 삼각형의 꼭짓점 열(col) 좌표
-     * @param isUpward 현재 삼각형이 위로 향하는지 여부
+     * Recursively draws the stars
+     * @param n current level
+     * @param r row coordinate of the apex of the current-level triangle
+     * @param c column coordinate of the apex of the current-level triangle
+     * @param isUpward whether the current triangle points upward
      */
     static void draw(int n, int r, int c, boolean isUpward) {
         if (n == 0) {
@@ -67,29 +67,29 @@ public class bj10993 {
 
         int h_border = 1 << (n - 1);
 
-        if (isUpward) { // 위로 향하는 삼각형
-            // 빗변 그리기
+        if (isUpward) { // upward-pointing triangle
+            // draw the slanted sides
             for (int i = 0; i < h_border; i++) {
                 map[r + i][c - i] = '*';
                 map[r + i][c + i] = '*';
             }
-            // 밑변 그리기
+            // draw the base
             Arrays.fill(map[r + h_border - 1], c - (h_border - 1), c + h_border, '*');
 
-            // 다음 재귀 호출 (아래로 향하는 패턴)
+            // next recursive call (downward-pointing pattern)
             int next_r = r + h_border / 2;
             draw(n - 1, next_r, c, !isUpward);
 
-        } else { // 아래로 향하는 삼각형
-            // 빗변 그리기
+        } else { // downward-pointing triangle
+            // draw the slanted sides
             for (int i = 0; i < h_border; i++) {
                 map[r - i][c - i] = '*';
                 map[r - i][c + i] = '*';
             }
-            // 윗변 그리기
+            // draw the top side
             Arrays.fill(map[r - h_border + 1], c - (h_border - 1), c + h_border, '*');
 
-            // 다음 재귀 호출 (위로 향하는 패턴)
+            // next recursive call (upward-pointing pattern)
             int next_r = r - h_border / 2;
             draw(n - 1, next_r, c, !isUpward);
         }

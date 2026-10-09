@@ -20,7 +20,7 @@ public class sw1979 {
             int[][] words = new int[N][N];
 
 
-            //입력
+            //Input
             for (int i = 0; i < N; i++) {
                 st = new StringTokenizer(br.readLine());
                 for (int j = 0; j < N; j++) {
@@ -30,19 +30,19 @@ public class sw1979 {
 
             int count = 0;
 
-            //모든 배열 조사
+            //Scan the entire array
             for (int i = 0; i < N; i++) {
                 for (int j = 0; j < N; j++) {
 
-                    //후보탐색 --> 1일때
+                    //Candidate search --> when 1
                     if (words[i][j] == 1) {
 
-                        //디테일한 후보(맨 왼쪽 혹은 해당 좌표 왼쪽이 막힘)
+                        //Specific candidate (leftmost, or the cell to the left is blocked)
                         if (j == 0 || words[i][j - 1] == 0) {
                             int currentLength = 0;
                             for (int k = 0; k < K; k++) {
 
-                                //실패할 때
+                                //On failure
                                 if (j + k >= N || words[i][j + k] == 0) {
                                     currentLength = -1;
                                     break;

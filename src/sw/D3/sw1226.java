@@ -22,11 +22,11 @@ public class sw1226 {
                 high[i] = Integer.parseInt(st.nextToken());
             }
 
-            // 맨 앞2개, 맨 뒤2개는 건물없음
+            // First 2 and last 2 have no buildings
             for (int i = 2; i < T - 2; i++) {
                 int maxNeighborHeight = 0;
 
-                // 주변 건물 탐색
+                // Check neighboring buildings
                 maxNeighborHeight = Math.max(maxNeighborHeight, high[i - 2]);
                 maxNeighborHeight = Math.max(maxNeighborHeight, high[i - 1]);
                 maxNeighborHeight = Math.max(maxNeighborHeight, high[i + 1]);

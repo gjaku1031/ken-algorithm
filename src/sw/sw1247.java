@@ -12,7 +12,7 @@ public class sw1247 {
 
     static Customer[] customers;
     static boolean[] visited;
-    // 상 하 좌 우
+    // up down left right
     static int[][] dir = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 
     static int start_r;

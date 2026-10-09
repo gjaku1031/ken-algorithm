@@ -25,7 +25,7 @@ public class bj9934 {
             sbs[i] = new StringBuilder();
         }
 
-        //입력 받기
+        //read input
         st = new StringTokenizer(br.readLine());
         while (st.hasMoreTokens()) {
             deq.addLast(Integer.parseInt(st.nextToken()));

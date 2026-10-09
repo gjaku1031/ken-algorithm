@@ -10,16 +10,16 @@ public class bj1157 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String str = br.readLine();
 
-        // 모두 대문자로 바꾸기
+        // Convert all to uppercase
         String upStr = str.toUpperCase();
         int[] alp = new int[26];
-        // 배열에 값 넣기
+        // Fill the array
         for (int i = 0; i < str.length(); i++) {
             alp[((int) upStr.charAt(i)) - 65]++;
         }
-        // 최대 찾기
+        // Find the max
         int max = Arrays.stream(alp).max().getAsInt();
-        // max 값 중복된 인덱스 체크
+        // Check for duplicate indices with the max value
         if (nestCheck(alp, max)) {
             System.out.println("?");
         } else {

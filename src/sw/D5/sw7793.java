@@ -11,7 +11,7 @@ public class sw7793 {
     static int T;
 
     static int N, M;
-    static int[][] dir = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}}; // 상하좌우
+    static int[][] dir = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}}; // Up/down/left/right
 
     static int sr, sc, er, ec;
     static int[][] map;
@@ -22,7 +22,7 @@ public class sw7793 {
     public static void main(String[] args) throws IOException {
         T = Integer.parseInt(br.readLine());
         for (int tc = 1; tc <= T; tc++) {
-            // 입력
+            // Input
             st = new StringTokenizer(br.readLine());
             N = Integer.parseInt(st.nextToken());
             M = Integer.parseInt(st.nextToken());
@@ -63,7 +63,7 @@ public class sw7793 {
         visited[sr][sc] = true;
 
         while (!queue.isEmpty()) {
-            // 악마의 손아귀 전이
+            // Spread the devil's grip
             List<int[]> devils = new ArrayList<>();
             for (int i = 0; i < N; i++) {
                 for (int j = 0; j < M; j++) {
@@ -82,7 +82,7 @@ public class sw7793 {
                     }
                 }
             }
-            // 같은 depth 돌기
+            // Process nodes at the same depth
             result++;
             int size = queue.size();
             for (int i = 0; i < size; i++) {

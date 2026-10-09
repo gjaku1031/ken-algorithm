@@ -27,7 +27,7 @@ public class bj12891 {
         }
         count = new int[4];
 
-        // 처음만 조사
+        // check only the first window
         for (int i = 0; i < P; i++) {
             correct(i);
         }

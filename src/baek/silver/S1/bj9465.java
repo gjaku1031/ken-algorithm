@@ -19,7 +19,7 @@ public class bj9465 {
             sticker = new int[2][n + 1];
             dp = new int[2][n + 1];
 
-            // 스티커 값 입력
+            // read sticker values
             for (int i = 0; i < 2; i++) {
                 st = new StringTokenizer(br.readLine());
                 for (int j = 1; j <= n; j++) {

@@ -24,7 +24,7 @@ public class bj2164 {
         public Card(int n) {
             this.N = n;
         }
-        // 카드 세팅
+        // Set up cards
         void setQue() {
             for (int i = 1; i <= N; i++) {
                 cardQue.add(i);

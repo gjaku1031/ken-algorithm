@@ -9,7 +9,7 @@ public class bj3109 {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static StringTokenizer st;
 
-    // 우상, 우, 우하
+    // up-right, right, down-right
     static int[][] dir = {{-1, 1}, {0, 1}, {1, 1}};
 
     static int R, C;
@@ -20,7 +20,7 @@ public class bj3109 {
 
 
     public static void main(String[] args) throws IOException {
-        // 입력
+        // Input
         st = new StringTokenizer(br.readLine());
         R = Integer.parseInt(st.nextToken());
         C = Integer.parseInt(st.nextToken());
@@ -49,9 +49,9 @@ public class bj3109 {
             int nr = r + d[0];
             int nc = c + d[1];
 
-            if (!valid(nr, nc)) continue;// 격자 안인지 확인
-            if (map[nr][nc] == 'x') continue;// 건물 있는지 확인
-            if (visited[nr][nc]) continue;// 이미 가스관 있는지 확인
+            if (!valid(nr, nc)) continue;// check that it is inside the grid
+            if (map[nr][nc] == 'x') continue;// check for a building
+            if (visited[nr][nc]) continue;// check whether a pipe is already there
 
             visited[nr][nc] = true;
             if (dfs(nr, nc)) return true;

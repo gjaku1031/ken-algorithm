@@ -33,7 +33,7 @@ public class bj2156 {
             return;
         }
 
-        //i번째 포도주 마시기 vs 안마시기
+        //drink the i-th wine vs. not
         for (int i = 3; i <= N; i++) {
             dp[i] = max(dp[i - 1], max(dp[i - 2] + grape[i], dp[i - 3] + grape[i - 1] + grape[i]));
         }

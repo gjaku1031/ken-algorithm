@@ -50,10 +50,10 @@ public class bj1991 {
     }
 
     static void preorder(int index) {
-        //System.out.println(index + "번 실행");
+        //System.out.println(index + " run");
         ArrayList<Integer> arr = chList[index];
         if (arr.get(0) == null && arr.get(1) == null) {
-            //System.out.println(index + " 번 비어서 종료");
+            //System.out.println(index + " is empty, exiting");
             return;
         }
         System.out.print((char) (index + 64));
@@ -68,14 +68,14 @@ public class bj1991 {
         } else {
             preorder(0);
         }
-        //System.out.println(index + "번 종료");
+        //System.out.println(index + " done");
     }
     static void inorder(int index) {
-        //System.out.println(index + "번 실행");
+        //System.out.println(index + " run");
         ArrayList<Integer> arr = chList[index];
 
         if (arr.get(0) == null && arr.get(1) == null) {
-            //System.out.println(index + " 번 비어서 종료");
+            //System.out.println(index + " is empty, exiting");
             return;
         }
 
@@ -92,14 +92,14 @@ public class bj1991 {
         } else {
             inorder(0);
         }
-        //System.out.println(index + "번 종료");
+        //System.out.println(index + " done");
     }
     static void postorder(int index) {
-        //System.out.println(index + "번 실행");
+        //System.out.println(index + " run");
         ArrayList<Integer> arr = chList[index];
 
         if (arr.get(0) == null && arr.get(1) == null) {
-            //System.out.println(index + " 번 비어서 종료");
+            //System.out.println(index + " is empty, exiting");
             return;
         }
 
@@ -116,6 +116,6 @@ public class bj1991 {
             postorder(0);
         }
         System.out.print((char) (index + 64));
-        //System.out.println(index + "번 종료");
+        //System.out.println(index + " done");
     }
 }

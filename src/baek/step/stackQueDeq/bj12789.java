@@ -25,38 +25,38 @@ public class bj12789 {
 
     static class Snack {
         int[] arr;
-        int currentIndex = 1; // 현재 나가야 하는 번호
+        int currentIndex = 1; // Number that should leave next
         Stack<Integer> stack = new Stack<>();
 
-        // 배열로 줄 생성
+        // Build the line from the array
         public Snack(int[] arr) {
             this.arr = arr;
         }
 
         public void line() {
-            // while(true)으로 수정
+            // Change to while(true)
             for (int i = 0; i < arr.length; i++) {
-                // 지금 번호랑 (i+1) 번째 번호랑 같으면 나감 -> 지금 번호 +1
+                // If the current number equals the (i+1)-th number, leave -> current number +1
                 if (currentIndex == arr[i]) {
                     currentIndex++;
-                    System.out.println(arr[i] + "번 간식받음");
+                    System.out.println(arr[i] + " got a snack");
 
-                // 줄선 맨 앞사람 번호랑 지금 번호가 같음 -> 줄선 맨 앞 사람 나감
+                // Front of the waiting line matches current number -> that person leaves
                 } else if (!stack.isEmpty() && stack.peek() == currentIndex) {
                     checkStack();
                     i--;
                 } else {
                     stack.push(arr[i]);
-                    System.out.println(arr[i] + "번 줄섬");
-                    System.out.println("현재줄" + stack);
+                    System.out.println(arr[i] + " joined the line");
+                    System.out.println("Current line: " + stack);
                 }
             }
         }
 
-        // 줄선 맨 앞사람
+        // Front person in the waiting line
         public void checkStack() {
             while (!stack.isEmpty() && currentIndex == stack.peek()) {
-                System.out.println(stack.peek() + "번 간식 이제야 받으러 감");
+                System.out.println(stack.peek() + " finally goes to get a snack");
                 stack.pop();
                 currentIndex++;
             }

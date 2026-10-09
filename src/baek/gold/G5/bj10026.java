@@ -9,7 +9,7 @@ public class bj10026 {
 
     static int N;
     static int[][] map;
-    static int[][] dir = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}}; // 상하좌우
+    static int[][] dir = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}}; // up, down, left, right
     static boolean[][] visited;
     static boolean[][] visited_ab;
 

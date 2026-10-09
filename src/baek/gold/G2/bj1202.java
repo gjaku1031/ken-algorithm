@@ -12,9 +12,9 @@ public class bj1202 {
     static StringTokenizer st;
 
     static int N, K;
-    static PriorityQueue<Jewel> jewelQueue = new PriorityQueue<>();  // 보석을 무게 오름차순으로 관리
-    static PriorityQueue<Integer> bag = new PriorityQueue<>();  // 가방을 용량 오름차순으로 관리
-    static PriorityQueue<Integer> candidate = new PriorityQueue<>(Collections.reverseOrder());  // 선택 가능한 보석을 가격 내림차순으로 관리
+    static PriorityQueue<Jewel> jewelQueue = new PriorityQueue<>();  // jewels kept in ascending order of weight
+    static PriorityQueue<Integer> bag = new PriorityQueue<>();  // bags kept in ascending order of capacity
+    static PriorityQueue<Integer> candidate = new PriorityQueue<>(Collections.reverseOrder());  // selectable jewels kept in descending order of price
 
     static class Jewel implements Comparable<Jewel> {
         int weight, price;
@@ -26,18 +26,18 @@ public class bj1202 {
 
         @Override
         public int compareTo(Jewel o) {
-            return this.weight - o.weight;  // 무게가 가벼운 순서
+            return this.weight - o.weight;  // lighter weight first
         }
     }
 
     public static void main(String[] args) throws IOException {
-        // 입력: 보석 개수 N, 가방 개수 K
+        // Input: number of jewels N, number of bags K
         st = new StringTokenizer(br.readLine());
         N = Integer.parseInt(st.nextToken());
         K = Integer.parseInt(st.nextToken());
 
-        // N개의 보석 정보 입력 (무게, 가격)
-        // jewelQueue에 자동으로 무게 오름차순 정렬되어 저장됨
+        // read N jewels (weight, price)
+        // stored in jewelQueue, automatically sorted by weight ascending
         for (int i = 0; i < N; i++) {
             st = new StringTokenizer(br.readLine());
             int weight = Integer.parseInt(st.nextToken());
@@ -45,28 +45,28 @@ public class bj1202 {
             jewelQueue.add(new Jewel(weight, price));
         }
 
-        // K개의 가방 용량 입력
-        // bag에 자동으로 용량 오름차순 정렬되어 저장됨
+        // read the capacities of K bags
+        // stored in bag, automatically sorted by capacity ascending
         for (int i = 0; i < K; i++) {
             bag.add(Integer.parseInt(br.readLine()));
         }
 
-        long answer = 0;  // 최대 가격의 합 (최대 30만 * 100만 = 3000억이므로 long 사용)
+        long answer = 0;  // maximum total price (up to 300,000 * 1,000,000 = 300 billion, so use long)
 
-        // 각 가방을 용량이 작은 것부터 처리
+        // process bags from the smallest capacity up
         for (int i = 0; i < K; i++) {
-            int bagCapacity = bag.poll();  // 현재 처리할 가방의 용량
+            int bagCapacity = bag.poll();  // capacity of the bag being processed
 
-            // 현재 가방에 넣을 수 있는 모든 보석을 candidate에 추가
-            // jewelQueue는 무게순이므로, 현재 가방 용량 이하인 모든 보석을 꺼냄
+            // add every jewel that fits in the current bag to candidate
+            // jewelQueue is ordered by weight, so poll every jewel with weight <= current bag capacity
             while (!jewelQueue.isEmpty() && jewelQueue.peek().weight <= bagCapacity) {
-                candidate.add(jewelQueue.poll().price);  // 가격만 candidate에 추가 (자동으로 가격 내림차순 정렬)
+                candidate.add(jewelQueue.poll().price);  // add only the price to candidate (automatically sorted by price descending)
             }
 
-            // candidate에서 가장 비싼 보석 1개를 선택
-            // candidate가 비어있지 않으면 (= 넣을 수 있는 보석이 있으면)
+            // pick the single most expensive jewel from candidate
+            // if candidate is not empty (= some jewel fits)
             if (!candidate.isEmpty()) {
-                answer += candidate.poll();  // 가장 비싼 보석의 가격을 더함
+                answer += candidate.poll();  // add the price of the most expensive jewel
             }
         }
 

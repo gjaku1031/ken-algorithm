@@ -19,7 +19,7 @@ public class sw5215 {
             int L = Integer.parseInt(st.nextToken());
 
             int[][] ingredients = new int[N][2];
-            int[] dp = new int[L + 1]; // dp[k] = 칼로리 합이 k 이하일 때 최대 맛 점수
+            int[] dp = new int[L + 1]; // dp[k] = max taste score with total calories <= k
 
             for (int i = 0; i < N; i++) {
                 st = new StringTokenizer(br.readLine());

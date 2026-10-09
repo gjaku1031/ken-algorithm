@@ -16,7 +16,7 @@ public class bj16935 {
     static StringBuilder result = new StringBuilder();
 
     public static void main(String[] args) throws IOException {
-        // 입력
+        // Input
         st = new StringTokenizer(br.readLine());
         N = Integer.parseInt(st.nextToken());
         M = Integer.parseInt(st.nextToken());
@@ -137,10 +137,10 @@ public class bj16935 {
 
         int[][] temp_arr = new int[R][C];
 
-        copy(temp_arr, input, 0, 0, R / 2, 0);          // 좌상 ← 좌하
-        copy(temp_arr, input, 0, C / 2, 0, 0);          // 우상 ← 좌상
-        copy(temp_arr, input, R / 2, C / 2, 0, C / 2);  // 우하 ← 우상
-        copy(temp_arr, input, R / 2, 0, R / 2, C / 2);  // 좌하 ← 우하
+        copy(temp_arr, input, 0, 0, R / 2, 0);          // top-left ← bottom-left
+        copy(temp_arr, input, 0, C / 2, 0, 0);          // top-right ← top-left
+        copy(temp_arr, input, R / 2, C / 2, 0, C / 2);  // bottom-right ← top-right
+        copy(temp_arr, input, R / 2, 0, R / 2, C / 2);  // bottom-left ← bottom-right
 
         temp = new int[R][C];
         for (int i = 0; i < R; i++) {
@@ -154,10 +154,10 @@ public class bj16935 {
 
         int[][] temp_arr = new int[R][C];
 
-        copy(temp_arr, input, 0, 0, 0, C / 2);          // 좌상 ← 우상
-        copy(temp_arr, input, 0, C / 2, R / 2, C / 2);  // 우상 ← 우하
-        copy(temp_arr, input, R / 2, C / 2, R / 2, 0);  // 우하 ← 좌하
-        copy(temp_arr, input, R / 2, 0, 0, 0);          // 좌하 ← 좌상
+        copy(temp_arr, input, 0, 0, 0, C / 2);          // top-left ← top-right
+        copy(temp_arr, input, 0, C / 2, R / 2, C / 2);  // top-right ← bottom-right
+        copy(temp_arr, input, R / 2, C / 2, R / 2, 0);  // bottom-right ← bottom-left
+        copy(temp_arr, input, R / 2, 0, 0, 0);          // bottom-left ← top-left
 
         temp = new int[R][C];
         for (int i = 0; i < R; i++) {

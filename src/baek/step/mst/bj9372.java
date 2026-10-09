@@ -23,11 +23,11 @@ public class bj9372 {
             N = Integer.parseInt(st0.nextToken());
             M = Integer.parseInt(st0.nextToken());
 
-            // BFS 준비
+            // Prepare BFS
             visited = new boolean[N + 1];
             graph = new ArrayList[N + 1];
 
-            // N차 try 시작
+            // Start N-th try
             for (int j = 1; j <= N; j++) {
                 graph[j] = new ArrayList<>();
             }
@@ -43,7 +43,7 @@ public class bj9372 {
             visited[1] = true;
             DFS(3);
             System.out.println(answer);
-// 부모를 따로 표기
+// Track parents separately
 
 
         }
@@ -60,4 +60,4 @@ public class bj9372 {
         }
     }
 }
-// 최소 신장 트리
+// Minimum spanning tree

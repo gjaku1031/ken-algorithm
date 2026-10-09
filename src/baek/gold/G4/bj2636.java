@@ -14,14 +14,14 @@ public class bj2636 {
     static int R, C;
     static int[][] map;
 
-    static int time = 0; // 녹는데 걸리는 시간
-    static int pastCheese; //한시간 전 치즈 갯수
+    static int time = 0; // time taken to melt
+    static int pastCheese; //cheese count one hour earlier
 
-    static int[][] dir = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}}; // 상하좌우
+    static int[][] dir = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}}; // up, down, left, right
     static boolean[][] visited;
 
     public static void main(String[] args) throws IOException {
-        // 입력
+        // Input
         st = new StringTokenizer(br.readLine());
         R = Integer.parseInt(st.nextToken());
         C = Integer.parseInt(st.nextToken());
@@ -35,7 +35,7 @@ public class bj2636 {
             }
         }
 
-        // 둘레 삭제
+        // remove the outer edge
         while (hasCheese()){
             bfs();
         }
@@ -55,7 +55,7 @@ public class bj2636 {
 
     }
 
-    // 둘레임?
+    // is it on the outer edge?
     static void bfs() {
         pastCheese = 0;
         visited = new boolean[R][C];

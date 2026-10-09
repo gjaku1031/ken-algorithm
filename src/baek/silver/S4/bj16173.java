@@ -13,7 +13,7 @@ public class bj16173 {
     static int N;
 
     static Node[][] square;
-    //우 하
+    //right, down
     static int[] dc = {0, 1};
     static int[] dr = {1, 0};
 
@@ -22,7 +22,7 @@ public class bj16173 {
         square = new Node[N][N];
 
 
-        // 입력
+        // input
         for (int i = 0; i < N; i++) {
             st = new StringTokenizer(br.readLine());
             for (int j = 0; j < N; j++) {

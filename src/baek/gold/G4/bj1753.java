@@ -18,7 +18,7 @@ public class bj1753 {
 
     static class State implements Comparable<State> {
         int v;
-        long d; // 정점, 현재까지의 거리
+        long d; // vertex, distance so far
 
         State(int v, long d) {
             this.v = v;
@@ -40,12 +40,12 @@ public class bj1753 {
 
         while (!pq.isEmpty()) {
             State cur = pq.poll();
-            if (cur.d != dist[cur.v]) continue; // stale(낡은) 항목 스킵
+            if (cur.d != dist[cur.v]) continue; // skip stale (outdated) entries
 
             for (Edge e : g[cur.v]) {
-                long nd = cur.d + e.w;          // 완화 후보 거리
+                long nd = cur.d + e.w;          // candidate distance for relaxation
                 if (nd < dist[e.to]) {
-                    dist[e.to] = nd;            // 완화
+                    dist[e.to] = nd;            // relaxation
                     pq.add(new State(e.to, nd));
                 }
             }
@@ -69,7 +69,7 @@ public class bj1753 {
             int u = Integer.parseInt(st.nextToken());
             int v = Integer.parseInt(st.nextToken());
             int w = Integer.parseInt(st.nextToken());
-            g[u].add(new Edge(v, w)); // 방향 그래프
+            g[u].add(new Edge(v, w)); // directed graph
         }
 
         long[] dist = dijkstra(V, K, g);

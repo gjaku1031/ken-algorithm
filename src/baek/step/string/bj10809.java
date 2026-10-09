@@ -12,7 +12,7 @@ public class bj10809 {
         String s = br.readLine();
         int[] alp = new int[26];
 
-        // val 값으로 배열 채우기
+        // Fill the array with val
         Arrays.fill(alp, -1);
 
         for (int i = 0; i < 26; i++) {

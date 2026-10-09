@@ -13,7 +13,7 @@ public class bj2477 {
 
     public static void main(String[] args) throws IOException {
         cal = Integer.parseInt(br.readLine());
-        int[] dir = new int[12]; // 필요없음
+        int[] dir = new int[12]; // not needed
         int[] len = new int[12];
 
         for (int i = 0; i < 6; i++) {

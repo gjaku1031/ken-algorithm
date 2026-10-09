@@ -13,7 +13,7 @@ public class sw1210 {
     static int[][] ladder;
     static int result;
 
-    // 우, 좌, 상
+    // right, left, up
     static int[] dx = { 1, -1, 0 };
     static int[] dy = { 0, 0, -1 };
 
@@ -54,24 +54,24 @@ public class sw1210 {
 
             int nx = x + dx[0];
             int ny = y + dy[0];
-            if (valid(nx, ny) && ladder[ny][nx] == 1) { // 좌측
+            if (valid(nx, ny) && ladder[ny][nx] == 1) { // Left
                 while (valid(nx, ny) && ladder[ny][nx] == 1) {
                     x = nx;
-                    // y는 그대로
-                    nx = x + dx[0]; // 계속 왼쪽
+                    // y unchanged
+                    nx = x + dx[0]; // Keep going left
                 }
             } else {
                 nx = x + dx[1];
                 ny = y + dy[1];
-                if (valid(nx, ny) && ladder[ny][nx] == 1) { // 계속 오른쪽
+                if (valid(nx, ny) && ladder[ny][nx] == 1) { // Keep going right
                     while (valid(nx, ny) && ladder[ny][nx] == 1) {
                         x = nx;
                         nx = x + dx[1];
                     }
                 }
             }
-            // 3. 위
-            // 좌, 우로 이동x => 위로
+            // 3. Up
+            // No left/right move => go up
             y = y + dy[2];
 
         }

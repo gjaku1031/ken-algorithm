@@ -83,7 +83,7 @@ public class bj3665 {
 
         while (!que.isEmpty()) {
 
-            // 큐에 들어있는 원소가 2개 이상이라면, 유일한 순위를 만들 수 없다.
+            // if the queue holds 2 or more elements, the ranking cannot be uniquely determined.
             if (que.size() > 1) {
                 isAmbiguous = true;
             }
@@ -99,15 +99,15 @@ public class bj3665 {
             }
         }
 
-        // 1. 순환 판별 (IMPOSSIBLE)
+        // 1. cycle detection (IMPOSSIBLE)
         if (order.size() < n) {
             System.out.println("IMPOSSIBLE");
         }
-        // 2. 결과가 여러 개인지 판별 (?)
+        // 2. check whether there are multiple results (?)
         else if (isAmbiguous) {
             System.out.println("?");
         }
-        // 3. 유일한 순위가 결정된 경우
+        // 3. a unique ranking is determined
         else {
             for (int team : order) {
                 sb.append(team).append(" ");

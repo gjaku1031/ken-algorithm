@@ -26,11 +26,11 @@ public class bj2476 {
     }
     
     private static int calculatePrize(int a, int b, int c) {
-        // 세 개가 모두 같은 경우
+        // all three are equal
         if (a == b && b == c) {
             return 10000 + a * 1000;
         }
-        // 두 개가 같은 경우
+        // two are equal
         else if (a == b) {
             return 1000 + a * 100;
         } else if (b == c) {
@@ -38,7 +38,7 @@ public class bj2476 {
         } else if (a == c) {
             return 1000 + a * 100;
         }
-        // 모두 다른 경우
+        // all different
         else {
             int max = Math.max(a, Math.max(b, c));
             return max * 100;

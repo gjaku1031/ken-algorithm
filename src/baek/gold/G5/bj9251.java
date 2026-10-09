@@ -17,7 +17,7 @@ public class bj9251 {
         int length2 = str2.length();
         dp = new int[length1 + 1][length2 + 1];
 
-        // 초기화
+        // Initialization
         for (int i = 0; i <= length1; i++) {
             dp[i][0] = 0;
         }
@@ -26,7 +26,7 @@ public class bj9251 {
             dp[0][i] = 0;
         }
 
-        // 점화식
+        // Recurrence
         for (int i = 1; i <= length1; i++) {
             for (int j = 1; j <= length2; j++) {
                 if (str1.charAt(i - 1) == str2.charAt(j - 1)) {

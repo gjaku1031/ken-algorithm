@@ -29,7 +29,7 @@ public class sw13428 {
                         min = Math.min(min, val);
                         max = Math.max(max, val);
                     }
-                    swap(digits, i, j); // 백트래킹
+                    swap(digits, i, j); // Backtrack
                 }
             }
             System.out.println("#" + tc + " " + min + " " + max);

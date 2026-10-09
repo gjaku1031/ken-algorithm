@@ -14,7 +14,7 @@ public class sw1873 {
     static int c = 0;
     static int r = 0;
     static char idx = ' ';
-    static int dirNumericIdx = 0; //탱크 현재 방향 숫자
+    static int dirNumericIdx = 0; //Tank's current direction index
 
     static int[] dr = {-1, 1, 0, 0};
     static int[] dc = {0, 0, -1, 1};

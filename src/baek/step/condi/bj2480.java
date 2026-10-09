@@ -27,7 +27,7 @@ public class bj2480 {
             this.dice3 = dice3;
         }
 
-        int isTriple() { // 메서드 이름 이게 맞나?
+        int isTriple() { // Is this method name right?
             if (dice1 == dice2 && dice2 == dice3) {
                 return dice1 * 1000 + 10000;
             } else {
@@ -49,13 +49,13 @@ public class bj2480 {
 
         int isDistinct() {
             if ((dice1 != dice2) && (dice2 != dice3) && (dice3 != dice1)) {
-                return Math.max(dice1, Math.max(dice2, dice3)) * 100; // 3개의 최대 찾을 때 써먹을 방법?
+                return Math.max(dice1, Math.max(dice2, dice3)) * 100; // A way to find the max of three?
             }
             return 0;
         }
 
         int calculatePrize() {
-            return isTriple() + isPair() + isDistinct(); // 이게 최선인가?
+            return isTriple() + isPair() + isDistinct(); // Is this the best way?
         }
     }
 }

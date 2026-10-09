@@ -22,7 +22,7 @@ public class bj17386 {
     long cd_a = ccw(x3, y3, x4, y4, x1, y1);
     long cd_b = ccw(x3, y3, x4, y4, x2, y2);
 
-    // 공선인 경우: 바운딩 박스 겹치면 교차
+    // collinear case: intersect if the bounding boxes overlap
     if (ab_c == 0 && ab_d == 0 && cd_a == 0 && cd_b == 0) {
       boolean xOverlap =
           Math.max(Math.min(x1, x2), Math.min(x3, x4))
@@ -32,7 +32,7 @@ public class bj17386 {
               <= Math.min(Math.max(y1, y2), Math.max(y3, y4));
       return xOverlap && yOverlap;
     }
-    // 일반 경우
+    // general case
     return ab_c * ab_d <= 0 && cd_a * cd_b <= 0;
   }
 

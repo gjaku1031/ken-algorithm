@@ -14,7 +14,7 @@ public class bj17070 {
 
         n = Integer.parseInt(br.readLine());
         map = new int[n+1][n+1];
-        dp = new long[n+1][n+1][3]; //0은 좌우, 1은 상하, 2는 대각선
+        dp = new long[n+1][n+1][3]; //0: horizontal, 1: vertical, 2: diagonal
 
         StringTokenizer st;
         for(int i=1;i<=n;i++) {

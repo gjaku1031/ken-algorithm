@@ -12,7 +12,7 @@ public class sw7733 {
 
     static int N, day;
     static int[][] map;
-    static int[][] dir = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}}; // 상하좌우
+    static int[][] dir = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}}; // Up/down/left/right
     static boolean[][] visited;
     static StringBuilder sb = new StringBuilder();
 
@@ -22,7 +22,7 @@ public class sw7733 {
     public static void main(String[] args) throws IOException {
         T = Integer.parseInt(br.readLine());
         for (int tc = 1; tc <= T; tc++) {
-            // 입력
+            // Input
             N = Integer.parseInt(br.readLine());
             map = new int[N][N];
             int max = 0;
@@ -32,7 +32,7 @@ public class sw7733 {
                 st = new StringTokenizer(br.readLine());
                 for (int j = 0; j < N; j++) {
                     map[i][j] = Integer.parseInt(st.nextToken());
-                    max = Math.max(max, map[i][j]); // 100일 다 돌 필요 없이 최대까지만
+                    max = Math.max(max, map[i][j]); // Only iterate up to the max, not all 100 days
                 }
             }
             for (day = 0; day <= max; day++) {

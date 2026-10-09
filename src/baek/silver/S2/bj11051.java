@@ -25,7 +25,7 @@ public class bj11051 {
             pascal[i] = new ArrayList<>();
         }
 
-        // 첫줄 추가
+        // add first row
         pascal[1].add(1);
         pascal[1].add(1);
 

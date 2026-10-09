@@ -13,7 +13,7 @@ public class bj11729 {
 
     public static void main(String[] args) throws IOException {
         N = Integer.parseInt(br.readLine());
-        System.out.println((1 << N) - 1); //비트 연산
+        System.out.println((1 << N) - 1); //bit operation
         hanoi(N, 1, 3, 2);
         System.out.println(sb);
     }

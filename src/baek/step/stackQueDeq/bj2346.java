@@ -28,22 +28,22 @@ public class bj2346 {
         int nextTarget;
         StringBuilder sb = new StringBuilder();
 
-        // 생성자
+        // Constructor
         public Balloon(int n, int[] target) {
             N = n;
             this.target = target;
         }
 
-        // 풍선 세팅하기
+        // Set up balloons
         public void setBalloons() {
             for (int i = 1; i <= N; i++) {
                 balloons.addLast(i);
             }
         }
 
-        // 풍선 터뜨리기
+        // Pop balloons
         public void explodeBalloon() {
-            // 첫번째 try
+            // First try
             nextTarget = target[0];
             sb.append(balloons.getFirst()).append(" ");
             balloons.pollFirst();

@@ -40,7 +40,7 @@ public class sw2382 {
             }
 
             for (int time = 0; time < M; time++) {
-                // 다음 맵
+                // Next map
                 nextMap = new List[N][N];
                 for (int i = 0; i < N; i++) {
                     for (int j = 0; j < N; j++) {

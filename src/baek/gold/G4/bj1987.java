@@ -11,7 +11,7 @@ public class bj1987 {
     static int R, C;
 
     static char[][] map;
-    static int[][] dir = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}}; // 상하좌우
+    static int[][] dir = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}}; // up, down, left, right
 
     static boolean[] visited_alp = new boolean[26];
 

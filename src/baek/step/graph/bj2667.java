@@ -25,7 +25,7 @@ public class bj2667 {
         visited = new boolean[N][N];
         houseNum = new ArrayList<>();
 
-        // 입력
+        // Input
         for (int i = 0; i < N; i++) {
             String line = br.readLine();
             for (int j = 0; j < N; j++) {
@@ -52,7 +52,7 @@ public class bj2667 {
     }
 
     public static void search(int currentX, int currentY) {
-        // 4방향
+        // 4 directions
         for (int i = 0; i < 4; i++) {
             int nextX = currentX + dx[i];
             int nextY = currentY + dy[i];

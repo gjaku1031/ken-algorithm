@@ -45,7 +45,7 @@ public class bj5567 {
                 queue.offer(next);
             }
         }
-        int loopSize = queue.size(); //queue 사이즈가 동적으로 변하므로
+        int loopSize = queue.size(); //because the queue size changes dynamically
         for (int i = 0; i < loopSize; i++) {
             now = queue.poll();
             for (int j = 0; j < graph[now].size(); j++) {

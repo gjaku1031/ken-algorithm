@@ -15,7 +15,7 @@ public class sw4615 {
 
     static int c, r, color;
 
-    // 상, 하, 좌, 우, 좌상, 우상, 좌하, 우하
+    // up, down, left, right, up-left, up-right, down-left, down-right
     static int[] dc = { 1, -1, 0, 0, 1, 1, -1, -1 };
     static int[] dr = { 0, 0, -1, 1, -1, 1, -1, 1 };
 

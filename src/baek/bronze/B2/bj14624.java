@@ -11,36 +11,36 @@ public class bj14624 {
 
         int n = Integer.parseInt(br.readLine());
 
-        // 짝수인 경우
+        // even case
         if (n % 2 == 0) {
             System.out.println("I LOVE CBNU");
         }
-        // 홀수인 경우 - 전북대학교 로고 모양 출력
+        // odd case - print the Jeonbuk National University logo shape
         else {
-            // 첫 번째 줄 - 별 n개
+            // first line - n stars
             for (int i = 0; i < n; i++) {
                 sb.append('*');
             }
             sb.append('\n');
 
-            // 두 번째 줄부터 - V자 모양
-            int mid = n / 2;  // 중간 위치
+            // from the second line - V shape
+            int mid = n / 2;  // middle position
 
             for (int i = 0; i <= mid; i++) {
-                // 왼쪽 공백
+                // left spaces
                 for (int j = 0; j < mid - i; j++) {
                     sb.append(' ');
                 }
 
-                // 왼쪽 별
+                // left star
                 sb.append('*');
 
-                // 가운데 공백
+                // middle spaces
                 if (i > 0) {
                     for (int j = 0; j < 2 * i - 1; j++) {
                         sb.append(' ');
                     }
-                    // 오른쪽 별
+                    // right star
                     sb.append('*');
                 }
 

@@ -35,7 +35,7 @@ public class sw4013 {
             for (int i = 0; i < K; i++) {
                 st = new StringTokenizer(br.readLine());
                 int r = Integer.parseInt(st.nextToken());
-                int d = Integer.parseInt(st.nextToken()); // 1: 시계, -1: 반시계
+                int d = Integer.parseInt(st.nextToken()); // 1: clockwise, -1: counterclockwise
                 rotate(r, d);
             }
 
@@ -49,7 +49,7 @@ public class sw4013 {
         int[] dir = new int[4];
         dir[idx] = d;
 
-        // 왼쪽
+        // Left
         for (int i = idx - 1; i >= 0; i--) {
             int rightPol = getAt(magnet[i], 2);
             int leftPolN = getAt(magnet[i + 1], 6);
@@ -58,7 +58,7 @@ public class sw4013 {
             } else break;
         }
 
-        // 오른쪽
+        // Right
         for (int i = idx + 1; i < 4; i++) {
             int rightPolL = getAt(magnet[i - 1], 2);
             int leftPol   = getAt(magnet[i], 6);
@@ -68,9 +68,9 @@ public class sw4013 {
         }
 
         for (int i = 0; i < 4; i++) {
-            if (dir[i] == 1) { // 시계
+            if (dir[i] == 1) { // Clockwise
                 magnet[i].addFirst(magnet[i].pollLast());
-            } else if (dir[i] == -1) { // 반시계
+            } else if (dir[i] == -1) { // Counterclockwise
                 magnet[i].addLast(magnet[i].pollFirst());
             }
         }

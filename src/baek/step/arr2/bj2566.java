@@ -18,13 +18,13 @@ public class bj2566 {
             }
         }
         int max = 0;
-        // 최대 찾기
+        // Find the max
         for (int i = 0; i < 9; i++) {
             int m = Arrays.stream(arr[i]).max().getAsInt();
             max = Math.max(max, m);
         }
 
-        // 최대 인덱스 찾기
+        // Find the max index
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
                 if (arr[i][j] == max) {

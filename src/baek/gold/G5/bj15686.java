@@ -14,8 +14,8 @@ public class bj15686 {
     static int N, M;
     static int[][] map;
     static List<int[]> houses;      // (r, c)
-    static List<Chicken> chickens;  // 치킨집 좌표
-    static int[] open;              // 선택된 치킨집 인덱스
+    static List<Chicken> chickens;  // chicken restaurant coordinates
+    static int[] open;              // indices of the selected chicken restaurants
 
     static int result = Integer.MAX_VALUE;
 

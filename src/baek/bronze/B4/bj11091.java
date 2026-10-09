@@ -10,17 +10,17 @@ public class bj11091 {
         int n = Integer.parseInt(br.readLine());
 
         for (int i = 0; i < n; i++) {
-            String sentence = br.readLine().toLowerCase(); // 소문자로 변환
-            boolean[] alphabet = new boolean[26]; // a~z 체크 배열
+            String sentence = br.readLine().toLowerCase(); // convert to lowercase
+            boolean[] alphabet = new boolean[26]; // a-z check array
 
-            // 문장에서 알파벳 체크
+            // mark letters present in the sentence
             for (char c : sentence.toCharArray()) {
                 if (c >= 'a' && c <= 'z') {
                     alphabet[c - 'a'] = true;
                 }
             }
 
-            // 빠진 알파벳 찾기
+            // find missing letters
             StringBuilder missing = new StringBuilder();
             for (int j = 0; j < 26; j++) {
                 if (!alphabet[j]) {
@@ -28,7 +28,7 @@ public class bj11091 {
                 }
             }
 
-            // 결과 출력
+            // print result
             if (missing.length() == 0) {
                 System.out.println("pangram");
             } else {

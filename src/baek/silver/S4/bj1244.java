@@ -44,7 +44,7 @@ public class bj1244 {
 
     static void man(int num) {
         for (int i = 1; i <= N / num; i++) {
-            //System.out.println(i*num+" 번 전구 바뀜");
+            //System.out.println(i*num+" bulb toggled");
             bull[i * num] = (bull[i * num] + 1) % 2;
         }
     }

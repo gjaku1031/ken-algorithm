@@ -18,7 +18,7 @@ public class bj1546 {
             nums[i] = Integer.parseInt(st.nextToken());
         }
 
-        // 최대 구하기
+        // Find the max
         int max = Arrays.stream(nums).max().getAsInt();
 
 

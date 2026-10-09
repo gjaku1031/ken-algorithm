@@ -11,7 +11,7 @@ public class sw1206 {
     static int T;
     static int success;
 
-    // 상 하 좌 우
+    // up down left right
     static int[] dc = { 1, -1, 0, 0 };
     static int[] dr = { 0, 0, -1, 1 };
 

@@ -11,7 +11,7 @@ public class bj1735 {
     static int x1, x2, y1, y2;
 
     public static void main(String[] args) throws IOException {
-        // 입력받기
+        // Read input
         st = new StringTokenizer(br.readLine());
         x1 = Integer.parseInt(st.nextToken());
         y1 = Integer.parseInt(st.nextToken());

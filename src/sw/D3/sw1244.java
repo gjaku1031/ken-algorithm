@@ -39,15 +39,15 @@ public class sw1244 {
     }
 
     static void DFS(int currentSwaps) {
-        String currentNumStr = new String(numArr); // 현재 숫자판 상태
+        String currentNumStr = new String(numArr); // Current number board state
 
-        if (visited[currentSwaps].contains(currentNumStr)) { // 가지치기
+        if (visited[currentSwaps].contains(currentNumStr)) { // Pruning
             return;
         }
 
         visited[currentSwaps].add(currentNumStr);
 
-        if (currentSwaps == maxSwap) { //최대 교환 -> 갱신
+        if (currentSwaps == maxSwap) { //Max swaps reached -> update
             maxPrize = Math.max(maxPrize, Integer.parseInt(currentNumStr));
             return;
         }
@@ -56,7 +56,7 @@ public class sw1244 {
             for (int j = i + 1; j < numArr.length; j++) {
                 swap(i, j);
                 DFS(currentSwaps + 1);
-                swap(i, j); //백트래킹
+                swap(i, j); //Backtrack
             }
 
         }

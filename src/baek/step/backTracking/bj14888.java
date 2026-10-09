@@ -79,22 +79,22 @@ public class bj14888 {
     }
 
     static void setOperator() {
-        // '+' 연산자 추가
+        // Add '+' operator
         for (int i = 0; i < operator[0]; i++) {
             sb.append('+');
         }
         
-        // '-' 연산자 추가
+        // Add '-' operator
         for (int i = 0; i < operator[1]; i++) {
             sb.append('-');
         }
         
-        // '*' 연산자 추가
+        // Add '*' operator
         for (int i = 0; i < operator[2]; i++) {
             sb.append('*');
         }
         
-        // '/' 연산자 추가
+        // Add '/' operator
         for (int i = 0; i < operator[3]; i++) {
             sb.append('/');
         }

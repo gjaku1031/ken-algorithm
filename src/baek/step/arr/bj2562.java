@@ -15,7 +15,7 @@ public class bj2562 {
             arr[i] = Integer.parseInt(br.readLine());
         }
         int max = Arrays.stream(arr).max().getAsInt();
-        System.out.println(Arrays.stream(arr).max().getAsInt()); // 정렬의 최대 구하는 메서드
+        System.out.println(Arrays.stream(arr).max().getAsInt()); // Method to get the max of the array
         for (int i = 0; i < 9; i++) {
             count++;
             if (max == arr[i]) {

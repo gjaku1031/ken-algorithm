@@ -33,7 +33,7 @@ public class bj1018 {
         String row2 = "WBWBWBWB";
         String[] testChess = new String[8];
 
-        // 테스트 체스판 만들기
+        // Build test chessboards
         if (startChar.equals("B")) {
             for (int i = 0; i < 8; i++) {
                 if (i % 2 == 0) {
@@ -55,7 +55,7 @@ public class bj1018 {
         return testChess;
     }
 
-    // 체스판 검사하기
+    // Check the chessboard
     static int test(String[] testChess, String[] chess, int x, int y) {
         int count = 0;
         for (int i = 0; i < 8; i++) {

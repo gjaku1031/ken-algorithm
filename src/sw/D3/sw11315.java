@@ -49,12 +49,12 @@ public class sw11315 {
     }
 
     static boolean check(int r, int c) {
-        for (int d = 0; d < 4; d++) { //4방향 조사
+        for (int d = 0; d < 4; d++) { //Check 4 directions
             int count = 1;
             int nr = r;
             int nc = c;
 
-            for (int k = 0; k < 4; k++) { //4개의 돌 조사
+            for (int k = 0; k < 4; k++) { //Check 4 stones
                 nr += dx[d];
                 nc += dy[d];
 

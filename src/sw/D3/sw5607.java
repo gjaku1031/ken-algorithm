@@ -30,7 +30,7 @@ public class sw5607 {
             long c1 = factorial[N] % MOD;
             long c2 = factorial[N - R] * factorial[R] % MOD;
 
-            //페르마 소정리
+            //Fermat's little theorem
             // a ^ (-1) ≡ a ^ (MOD - 2) (mod 1234567891)
             long c3 = pow(c2, MOD - 2); 
 
@@ -38,8 +38,8 @@ public class sw5607 {
         }
     }
 
-    // 분할 정복
-    // n^k mod 1234567891 계산
+    // Divide and conquer
+    // Compute n^k mod 1234567891
     static long pow(long n, long k) {
         if (k == 1) {
             return n;

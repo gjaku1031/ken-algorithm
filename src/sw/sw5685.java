@@ -18,7 +18,7 @@ public class sw5685 {
     public static void main(String[] args) throws IOException {
         T = Integer.parseInt(br.readLine());
         for (int tc = 1; tc <= T; tc++) {
-            // 입력
+            // Input
             st = new StringTokenizer(br.readLine());
             N = Integer.parseInt(st.nextToken());
             K = Integer.parseInt(st.nextToken());
@@ -34,7 +34,7 @@ public class sw5685 {
                 }
             }
 
-            // 첫 상태 계산
+            // Compute initial state
             for (int i = 0; i < N / 4; i++) {
                 cal();
                 deque.addFirst(deque.pollLast());

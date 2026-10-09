@@ -48,7 +48,7 @@ public class sw5648 {
         }
     }
 
-    // 0:상, 1:하, 2:좌, 3:우
+    // 0:up, 1:down, 2:left, 3:right
     static int[] dx = {0, 0, -1, 1};
     static int[] dy = {1, -1, 0, 0};
 
@@ -75,7 +75,7 @@ public class sw5648 {
     }
 
     private static long solve(int N, Atom[] atoms) {
-        // 시간 -> <충돌위치, 원자 set>
+        // time -> <collision position, atom set>
         TreeMap<Float, Map<Point, Set<Integer>>> collisionEvents = new TreeMap<>();
 
         for (int i = 0; i < N; i++) {
@@ -91,24 +91,24 @@ public class sw5648 {
                 int v2x = dx[a2.dir];
                 int v2y = dy[a2.dir];
 
-                // 1. 같은 축에서 평행하게 움직이는 경우
+                // 1. Moving in parallel on the same axis
                 if ((a1.dir <= 1 && a2.dir <= 1) || (a1.dir >= 2 && a2.dir >= 2)) {
-                    if (a1.y == a2.y && v1x != v2x) { // 수평 이동
+                    if (a1.y == a2.y && v1x != v2x) { // Horizontal movement
                         if ((a1.x < a2.x && v1x > 0 && v2x < 0) || (a1.x > a2.x && v1x < 0 && v2x > 0)) {
                             time = Math.abs((float) (a1.x - a2.x) / 2.0f);
                             colPoint = new Point(a1.x + v1x * time, a1.y);
                         }
-                    } else if (a1.x == a2.x && v1y != v2y) { // 수직 이동
+                    } else if (a1.x == a2.x && v1y != v2y) { // Vertical movement
                         if ((a1.y < a2.y && v1y > 0 && v2y < 0) || (a1.y > a2.y && v1y < 0 && v2y > 0)) {
                             time = Math.abs((float) (a1.y - a2.y) / 2.0f);
                             colPoint = new Point(a1.x, a1.y + v1y * time);
                         }
                     }
                 }
-                // 2. 서로 수직으로 움직이는 경우
+                // 2. Moving perpendicular to each other
                 else {
                     float t1, t2;
-                    if (v1x != 0 && v2y != 0) { // a1 수평, a2 수직
+                    if (v1x != 0 && v2y != 0) { // a1 horizontal, a2 vertical
                         if ((a2.x - a1.x) * v1x > 0 && (a1.y - a2.y) * v2y > 0) {
                             t1 = (float) Math.abs(a2.x - a1.x) / Math.abs(v1x);
                             t2 = (float) Math.abs(a1.y - a2.y) / Math.abs(v2y);
@@ -117,7 +117,7 @@ public class sw5648 {
                                 colPoint = new Point(a2.x, a1.y);
                             }
                         }
-                    } else if (v1y != 0 && v2x != 0) { // a1 수직, a2 수평
+                    } else if (v1y != 0 && v2x != 0) { // a1 vertical, a2 horizontal
                         if ((a1.x - a2.x) * v2x > 0 && (a2.y - a1.y) * v1y > 0) {
                             t1 = (float) Math.abs(a1.x - a2.x) / Math.abs(v2x);
                             t2 = (float) Math.abs(a2.y - a1.y) / Math.abs(v1y);

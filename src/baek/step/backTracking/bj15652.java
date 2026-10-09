@@ -21,7 +21,7 @@ public class bj15652 {
     }
 
     static void BTC(int start, int depth, int[] result) {
-        if (depth == M) { // M개를 모두 선택한 경우
+        if (depth == M) { // When all M have been chosen
             for (int num : result) {
                 sb.append(num).append(" ");
             }

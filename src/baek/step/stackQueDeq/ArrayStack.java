@@ -1,11 +1,11 @@
 package baek.step.stackQueDeq;
 
 
-//크기가 고정되어 있어서 완전하지는 않음!!
+//Not complete since the size is fixed!!
 
 public class ArrayStack {
-    int top;    //인덱스
-    int size;    //배열의 크기
+    int top;    //index
+    int size;    //array size
     int [] stack;
 
 

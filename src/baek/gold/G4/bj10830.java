@@ -37,7 +37,7 @@ public class bj10830 {
     }
 
     static long[][] recur(long[][] matrix, long exp) {
-        // 지수가 1이면 행렬 그대로 반환
+        // if the exponent is 1, return the matrix as is
         if (exp == 1) {
             return matrix;
         }

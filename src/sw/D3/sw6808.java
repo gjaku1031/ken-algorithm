@@ -27,7 +27,7 @@ public class sw6808 {
 
         for (int tc = 1; tc <= T; tc++) {
 
-            // 초기화
+            // Initialize
             cards_A = new int[9];
             cards_B = new int[9];
             visited = new boolean[9];
@@ -39,7 +39,7 @@ public class sw6808 {
                 cardSet.add(i);
             }
 
-            // 입력
+            // Input
             st = new StringTokenizer(br.readLine());
             for (int i = 0; i < 9; i++) {
                 int now = Integer.parseInt(st.nextToken());

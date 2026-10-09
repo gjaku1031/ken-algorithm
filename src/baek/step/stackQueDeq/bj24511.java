@@ -16,12 +16,12 @@ public class bj24511 {
         StringTokenizer st1 = new StringTokenizer(br.readLine());
 
         int[] queOrStack = new int[N];
-        // 2번째 줄 -> que -> 0, stack -> 1
+        // line 2 -> queue -> 0, stack -> 1
         for (int i = 0; i < N; i++) {
             queOrStack[i] = Integer.parseInt(st1.nextToken());
         }
 
-        // 초기값
+        // Initial values
         StringTokenizer st2 = new StringTokenizer(br.readLine());
         Deque<Integer> deque = new ArrayDeque<>();
         for (int i = 0; i < N; i++) {
@@ -33,7 +33,7 @@ public class bj24511 {
 
         int M = Integer.parseInt(br.readLine());
 
-        // 넣을 값
+        // Values to insert
         int[] inputNum = new int[M];
         StringTokenizer st3 = new StringTokenizer(br.readLine());
         for (int i = 0; i < M; i++) {

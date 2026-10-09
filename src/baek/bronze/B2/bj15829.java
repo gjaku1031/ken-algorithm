@@ -12,13 +12,13 @@ public class bj15829 {
         String str = br.readLine();
 
         long totalNum = 0;
-        long power = 1; // 31^i 값을 저장
+        long power = 1; // stores 31^i
         long mod = 1234567891;
 
         for (int i = 0; i < N; i++) {
             int value = str.charAt(i) - 'a' + 1; // a=1, b=2, ...
-            totalNum = (totalNum + value * power % mod) % mod; // 모듈러 연산
-            power = (power * 31) % mod; // 모듈러 연산
+            totalNum = (totalNum + value * power % mod) % mod; // modular arithmetic
+            power = (power * 31) % mod; // modular arithmetic
         }
 
         System.out.println(totalNum);

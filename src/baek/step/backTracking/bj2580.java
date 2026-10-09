@@ -18,25 +18,25 @@ public class bj2580 {
     static HashSet<Integer>[] groupSet = new HashSet[9];
 
     public static void main(String[] args) throws IOException {
-        // set 초기화
+        // Initialize sets
         for (int i = 0; i < 9; i++) {
             rowSet[i] = new HashSet<>();
             colSet[i] = new HashSet<>();
             groupSet[i] = new HashSet<>();
         }
 
-        // 입력
+        // Input
         for (int i = 0; i < 9; i++) {
             st = new StringTokenizer(br.readLine());
             for (int j = 0; j < 9; j++) {
                 int a = Integer.parseInt(st.nextToken());
 
-                // 집합에 대입
+                // Add to sets
                 rowSet[i].add(a);
                 colSet[j].add(a);
                 groupSet[searchGroup(i, j)].add(a);
 
-                // 배열에 대입
+                // Assign to array
                 sudoku[i][j] = a;
 
                 if (a == 0) {
@@ -73,16 +73,16 @@ public class bj2580 {
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < 9; i++) {
                 if (rowSet[i].size() == 9) {
-                    //System.out.println("rowset 확인");
+                    //System.out.println("rowset check");
                     return;
                 }
                 for (int j = 0; j < 9; j++) {
                     if (colSet[j].size() == 9) {
-                        //System.out.println("colset 확인");
+                        //System.out.println("colset check");
                         return;
                     }
                     if (groupSet[searchGroup(i, j)].size() == 9) {
-                        //System.out.println("groupset 확인");
+                        //System.out.println("groupset check");
                         return;
                     }
                     sb.append(sudoku[i][j]).append(" ");

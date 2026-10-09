@@ -27,11 +27,11 @@ public class bj1269 {
             set2.add(Integer.parseInt(st3.nextToken()));
         }
 
-        // 합집합
+        // Union
         HashSet<Integer> union = new HashSet<>(set1);
         union.addAll(set2);
 
-        // 교집합
+        // Intersection
         HashSet<Integer> intersection = new HashSet<>(set1);
         intersection.retainAll(set2);
 

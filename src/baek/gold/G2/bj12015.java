@@ -44,7 +44,7 @@ public class bj12015 {
  [10, 20, 30]
 
  x = 25
- 못찾음!
+ not found!
  idx = -2 -1 = -3
  pos = -(-3) -1 = 2
  tails[2] = 25
@@ -52,8 +52,8 @@ public class bj12015 {
  idx =
 
  x = 20
- 찾음!
+ found!
  idx = 1
- pos = 1 -> 교체
+ pos = 1 -> replace
 
  */

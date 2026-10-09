@@ -1,6 +1,6 @@
 package baek.gold.G4;
 
-// 같이 코드 작성 가능
+// the code can be written together
 
 
 import java.io.BufferedReader;

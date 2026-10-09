@@ -36,12 +36,12 @@ public class bj10811 {
         int size = y - x + 1;
         int[] tempArr = new int[size];
 
-        // 임시 배열에 숫자 담기
+        // Put numbers in a temp array
         for (int i = 0; i < size; i++) {
             tempArr[i] = baskets[x - 1 + i];
         }
 
-        // 역순으로 담기
+        // Put them in reverse order
         for (int i = 0; i < size; i++) {
             baskets[x - 1 + i] = tempArr[size - 1 - i];
         }

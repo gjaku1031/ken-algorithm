@@ -48,7 +48,7 @@ public class bj11866 {
         }
 
         void jose() {
-            //que 에 사람 저장
+            //store people in the queue
             setQue();
             while (!que.isEmpty()) {
                 setNewDiv();

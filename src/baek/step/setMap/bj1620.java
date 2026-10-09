@@ -13,7 +13,7 @@ public class bj1620 {
         StringTokenizer st = new StringTokenizer(br.readLine());
         StringBuilder sb = new StringBuilder();
 
-        // 해시맵 두개쓰기
+        // Use two hash maps
         HashMap<Integer, String> map1 = new HashMap<>();
         HashMap<String, Integer> map2 = new HashMap<>();
         int N = Integer.parseInt(st.nextToken());

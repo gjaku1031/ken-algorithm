@@ -42,12 +42,12 @@ public class bj1504 {
 
         while (!pq.isEmpty()) {
             State cur = pq.poll();
-            if (cur.d != dist[cur.v]) continue; // stale 항목 스킵
+            if (cur.d != dist[cur.v]) continue; // skip stale entries
 
             for (Edge e : g[cur.v]) {
-                long nd = cur.d + e.w;          // 완화 후보
+                long nd = cur.d + e.w;          // relaxation candidate
                 if (nd < dist[e.to]) {
-                    dist[e.to] = nd;            // 완화
+                    dist[e.to] = nd;            // relaxation
                     pq.add(new State(e.to, nd));
                 }
             }
@@ -71,7 +71,7 @@ public class bj1504 {
             int b = Integer.parseInt(st.nextToken());
             int c = Integer.parseInt(st.nextToken());
             g[a].add(new Edge(b, c));
-            g[b].add(new Edge(a, c)); // 무방향
+            g[b].add(new Edge(a, c)); // undirected
         }
 
         st = new StringTokenizer(br.readLine());

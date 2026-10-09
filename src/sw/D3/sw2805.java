@@ -21,7 +21,7 @@ public class sw2805 {
             }
 
             int sum = getSum(N, farm);
-            System.out.println("#" + tc + " " + sum); // 결과 출력
+            System.out.println("#" + tc + " " + sum); // Print result
         }
     }
 
@@ -32,17 +32,17 @@ public class sw2805 {
         for (int i = 0; i < N; i++) {
             int startCol, endCol;
             if (i <= mid) {
-                // 마름모 상반부: 중심에서 멀어질수록 범위가 넓어짐
+                // Upper half of the diamond: range widens farther from the center
                 startCol = mid - i;
                 endCol = mid + i;
             } else {
-                // 마름모 하반부: 중심에서 멀어질수록 범위가 좁아짐
-                int distFromBottomEdge = (N - 1) - i; // 아래 끝에서의 거리
+                // Lower half of the diamond: range narrows farther from the center
+                int distFromBottomEdge = (N - 1) - i; // Distance from the bottom edge
                 startCol = mid - distFromBottomEdge;
                 endCol = mid + distFromBottomEdge;
             }
 
-            // 해당 행의 마름모 범위 내 농작물 수확
+            // Harvest crops within the diamond range of this row
             for (int j = startCol; j <= endCol; j++) {
                 sum += farm[i][j];
             }

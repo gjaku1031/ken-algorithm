@@ -30,7 +30,7 @@ public class bj15961 {
         int result = 0;
         int distinct = 0;
 
-        // 일단 k개 담아
+        // first, add k items
         for (int i = 0; i < k; i++) {
 
             if (kind[sushi[i]] == 0) {

@@ -10,7 +10,7 @@ public class sw1249 {
     static int T, N;
 
     static int[][] map;
-    static int[][] dist; //최소 복구비용 저장
+    static int[][] dist; //Stores minimum repair cost
     static int INFINITY_NUM = Integer.MAX_VALUE;
     static PriorityQueue<Node> pr;
     static int[] dr = {-1, 1, 0, 0};
@@ -25,7 +25,7 @@ public class sw1249 {
 
             pr = new PriorityQueue<>();
 
-            //입력
+            //Input
             for (int i = 0; i < N; i++) {
                 String str = br.readLine();
                 for (int j = 0; j < N; j++) {
@@ -40,7 +40,7 @@ public class sw1249 {
     static void dijkstra() {
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
-                dist[i][j] = INFINITY_NUM; //일단 최대로 저장
+                dist[i][j] = INFINITY_NUM; //Initialize to max
             }
         }
 
@@ -53,7 +53,7 @@ public class sw1249 {
             int current_r = current.getRow();
             int current_c = current.getCol();
 
-            //이미 더 짧은 경로로 저장되어있으면 무시
+            //Skip if a shorter path is already stored
             if (current_cost > dist[current_r][current_c]) {
                 continue;
             }
@@ -62,7 +62,7 @@ public class sw1249 {
                 int nr = current_r + dr[i];
                 int nc = current_c + dc[i];
 
-                // 범위 탐색
+                // Bounds check
                 if (nr < 0 || nr >= N || nc < 0 || nc >= N) {
                     continue;
                 }

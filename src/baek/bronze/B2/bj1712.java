@@ -5,9 +5,9 @@ import java.util.Scanner;
 public class bj1712 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int A = sc.nextInt(); // 고정 비용
-		int B = sc.nextInt(); // 가변 비용
-		int C = sc.nextInt(); // 판매 가격
+		int A = sc.nextInt(); // fixed cost
+		int B = sc.nextInt(); // variable cost
+		int C = sc.nextInt(); // selling price
 
 		if (B >= C) {
 			System.out.println(-1);

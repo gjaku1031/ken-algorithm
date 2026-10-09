@@ -9,13 +9,13 @@ public class bj2444 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
 
-        //N행까지 출력
+        //print up to row N
         for (int i = 0; i < N; i++) {
-            // i행 공백출력
+            // Print spaces for row i
             for (int j = 0; j < N - 1 - i; j++) {
                 System.out.print(" ");
             }
-            // i행 *출력
+            // Print * for row i
             for (int j = 0; j < 2 * i + 1; j++) {
                 System.out.print("*");
             }
@@ -28,7 +28,7 @@ public class bj2444 {
             for (int j = 0; j < 2 * (N - i) - 1; j++) {
                 System.out.print("*");
             }
-            //마지막 줄 공백 없애기
+            //remove spaces on the last line
             if (i != N - 1) {
                 System.out.println();
             }

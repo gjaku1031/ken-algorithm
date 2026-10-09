@@ -49,7 +49,7 @@ public class sw9280 {
         }
     }
 
-    // 입차
+    // Car enters
     static void parkIn(int car) {
         int idx = findEmptySpot();
         if (idx != -1) {
@@ -59,7 +59,7 @@ public class sw9280 {
         }
     }
 
-    // 출차
+    // Car exits
     static void parkOut(int car) {
         int idx = findCarSpot(car);
         result += R[idx] * W[car];
@@ -70,7 +70,7 @@ public class sw9280 {
         }
     }
 
-    // 빈자리 찾기
+    // Find an empty spot
     static int findEmptySpot() {
         for (int i = 0; i < n; i++) {
             if (park[i] == -1) return i;
@@ -78,7 +78,7 @@ public class sw9280 {
         return -1;
     }
 
-    // 주차된 차량 자리 찾기
+    // Find the parked car's spot
     static int findCarSpot(int car) {
         for (int i = 0; i < n; i++) {
             if (park[i] == car) return i;

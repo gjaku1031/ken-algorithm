@@ -28,7 +28,7 @@ public class bj1780 {
 
     static void recur(int r, int c, int n) {
         if (allSame(r, c, n)) {
-            // -1일때 0 | 0일때 1 | 1일때 2
+            // -1 -> 0 | 0 -> 1 | 1 -> 2
             result[arr[r][c] + 1]++;
             return;
         }

@@ -16,7 +16,7 @@ public class bj6987 {
     public static void main(String[] args) throws IOException {
 
         for (int tc = 0; tc < 4; tc++) {
-            // 입력
+            // Input
             st = new StringTokenizer(br.readLine());
             team = new int[6][3];
             answer = 0;
@@ -28,7 +28,7 @@ public class bj6987 {
 
             }
 
-            // 승 + 무 + 패 합이 5아니면 백트래킹 안함
+            // skip backtracking if wins + draws + losses != 5
             boolean flag = true;
             for (int i = 0; i < 6; i++) {
                 if (team[i][0] + team[i][1] + team[i][2] != 5) {
@@ -36,7 +36,7 @@ public class bj6987 {
                     break;
                 }
             }
-            // 백트래킹
+            // Backtracking
             if (flag) {
                 bt(0, 1);
             }

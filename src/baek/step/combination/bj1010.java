@@ -24,14 +24,14 @@ public class bj1010 {
         }
     }
 
-    // 파스칼 삼각형 이용
+    // Use Pascal's triangle
     public static void pasTri() {
         pascal = new ArrayList[y + 1];
         for (int i = 0; i <=y; i++) {
             pascal[i] = new ArrayList<>();
         }
 
-        // 첫줄 추가
+        // Add the first row
         pascal[1].add(1);
         pascal[1].add(1);
 

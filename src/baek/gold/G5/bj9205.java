@@ -19,7 +19,7 @@ public class bj9205 {
 
 
     public static void main(String[] args) throws IOException {
-        // 입력
+        // Input
         t = Integer.parseInt(br.readLine());
 
 
@@ -27,13 +27,13 @@ public class bj9205 {
             n = Integer.parseInt(br.readLine());
             result = "sad";
 
-            // 집
+            // home
             st = new StringTokenizer(br.readLine());
             int a = Integer.parseInt(st.nextToken());
             int b = Integer.parseInt(st.nextToken());
             home = new int[]{a, b};
 
-            // 편의점
+            // convenience stores
             conveniences = new ArrayList<>();
             for (int i = 0; i < n; i++) {
                 st = new StringTokenizer(br.readLine());
@@ -42,7 +42,7 @@ public class bj9205 {
                 conveniences.add(new int[]{x, y});
             }
 
-            // 축제
+            // festival
             st = new StringTokenizer(br.readLine());
             a = Integer.parseInt(st.nextToken());
             b = Integer.parseInt(st.nextToken());

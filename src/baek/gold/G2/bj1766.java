@@ -9,7 +9,7 @@ import java.util.*;
 public class bj1766 {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static StringTokenizer st;
-    static int N, M; // N: 문제의 수, M: 먼저 푸는 것이 좋은 문제에 대한 정보의 개수
+    static int N, M; // N: number of problems, M: number of "better solved first" pairs
 
     static List<Integer>[] graph;
     static int[] indegree;

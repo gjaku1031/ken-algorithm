@@ -31,7 +31,7 @@ public class sw13732 {
                         start_c = i;
                         start_r = j;
                         found = true;
-                       /* System.out.println("start 찾음" + " c = " + start_c + " r = " + start_r);*/
+                       /* System.out.println("start found" + " c = " + start_c + " r = " + start_r);*/
                     }
                 }
             }
@@ -63,7 +63,7 @@ public class sw13732 {
                 } else {
              /*       System.out.println("i = " + i);
                     System.out.println("j = " + j);
-                    System.out.println("valid 하지 않아서 return됨");*/
+                    System.out.println("returned because not valid");*/
                     return "no";
                 }
             }
@@ -83,7 +83,7 @@ public class sw13732 {
                 if (new_board[i][j] != board[i][j]) {
                     /*System.out.println("i = " + i);
                     System.out.println("j = " + j);
-                    System.out.println("board 일치하지 않아서 return됨");*/
+                    System.out.println("returned because board does not match");*/
                     return "no";
                 }
             }

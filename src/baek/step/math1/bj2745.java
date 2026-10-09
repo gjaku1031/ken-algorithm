@@ -25,7 +25,7 @@ public class bj2745 {
             for (int i = 0; i < num.length(); i++) {
                 int a = 0;
 
-                // 알파벳 -> 숫자 전환(A : 65 -> A : 10)
+                // Convert letter -> number (A : 65 -> A : 10)
                 if ((int) (num.charAt(i)) >= 65) {
                     a = ((int) num.charAt(i)) - 55;
                     //System.out.println("a = " + a);
@@ -34,7 +34,7 @@ public class bj2745 {
                     //System.out.println("a = " + a);
                 }
 
-                // 해당 자리의 수 * ((자릿수) ^ Base)
+                // digit value * ((position) ^ Base)
                 convertedNum += a * (int) Math.pow(base, num.length() - i - 1);
             }
             return convertedNum;

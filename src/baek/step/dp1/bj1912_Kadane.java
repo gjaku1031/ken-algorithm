@@ -20,15 +20,15 @@ public class bj1912_Kadane {
             arr[i] = Integer.parseInt(st.nextToken());
         }
 
-        int currentMax = arr[0]; // 현재 인덱스에서 끝나는 최대 연속합
-        int overallMax = arr[0]; // 전체 배열에서의 최대 연속합
+        int currentMax = arr[0]; // Max contiguous sum ending at the current index
+        int overallMax = arr[0]; // Max contiguous sum over the whole array
 
     
         for (int i = 1; i < n; i++) {
-            // 현재 원소에서 새로 시작할지, 이전 연속합에 이어붙일지 결정
+            // Decide whether to start fresh at the current element or extend the previous sum
             currentMax = Math.max(arr[i], currentMax + arr[i]);
             
-            // 전체 최대값 업데이트
+            // Update the overall max
             overallMax = Math.max(overallMax, currentMax);
         }
 

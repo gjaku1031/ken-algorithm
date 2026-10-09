@@ -12,7 +12,7 @@ public class bj1707 {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static ArrayList<Integer>[] graph;
     static StringTokenizer st;
-    static int[] visited; // 색도 같이 저장
+    static int[] visited; // Also stores the color
     static int K, V, E;
 
     public static void main(String[] args) throws IOException {
@@ -54,18 +54,18 @@ public class bj1707 {
                 for (int j = 0; j < graph[now].size(); j++) {
                     int next = graph[now].get(j);
 
-                    // 첫 방문
+                    // First visit
                     if (visited[next] == 0) {
                         deque.add(next);
                     }
 
-                    // 색 같으면 리턴
+                    // Return if same color
                     if (visited[next] == visited[now]) {
                         System.out.println("NO");
                         return;
                     }
 
-                    // 다른 색 칠함
+                    // Paint with the other color
                     if (visited[now] == 1 && visited[next] == 0) {
                         visited[next] = 2;
                     } else if (visited[now] == 2 && visited[next] == 0) {

@@ -44,13 +44,13 @@ public class sw2806 {
     }
 
     static boolean noQueen(int x, int y) {
-        for (int i = 0; i < N; i++) { // 가로 세로 검사
+        for (int i = 0; i < N; i++) { // Check row and column
             if (chess[x][i] || chess[i][y]) {
                 return false;
             }
         }
 
-        for (int i = 1; i < N; i++) { // 1부터 시작해 대각선으로 이동
+        for (int i = 1; i < N; i++) { // Start from 1 and move diagonally
             for (int j = 0; j < 4; j++) {
                 int nextX = x + i * dx[j];
                 int nextY = y + i * dy[j];

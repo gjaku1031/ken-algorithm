@@ -20,7 +20,7 @@ public class sw2477 {
     static int[][] receipt;
     static int[][] maintenance;
 
-    static PriorityQueue<Integer> pq = new PriorityQueue<>(); // 사용하지 않지만 원 코드 보존
+    static PriorityQueue<Integer> pq = new PriorityQueue<>(); // Unused, but kept from the original code
 
     static Queue<Integer> waiting1 = new ArrayDeque<>();
     static Queue<Integer> waiting2 = new ArrayDeque<>();
@@ -50,7 +50,7 @@ public class sw2477 {
             st = new StringTokenizer(br.readLine());
             for (int i = 1; i <= M; i++) b[i] = Integer.parseInt(st.nextToken());
 
-            // 고객 도착 시간 입력
+            // Read customer arrival times
             int[] arrive = new int[K + 1];
             int maxT = 0;
             st = new StringTokenizer(br.readLine());
@@ -75,11 +75,11 @@ public class sw2477 {
 
             int t = 0;
             while (count < K) {
-                // 정비 창구 작업 진행 및 완료 처리
+                // Advance repair desk work and handle completion
                 for (int j = 1; j <= M; j++) {
                     if (maintenance[j][0] != 0) {
                         maintenance[j][1]--;
-                        if (maintenance[j][1] == 0) { // 정비 완
+                        if (maintenance[j][1] == 0) { // Repair done
 
                             maintenance[j][0] = 0;
                             count++;
@@ -87,40 +87,40 @@ public class sw2477 {
                     }
                 }
 
-                // 접수 창구 작업 진행 및 완료한 고객을 정비 대기열에 투입
+                // Advance reception desk work and move finished customers to the repair queue
                 for (int i = 1; i <= N; i++) {
                     if (receipt[i][0] != 0) {
                         receipt[i][1]--;
                         if (receipt[i][1] == 0) {
                             int finishedClient = receipt[i][0];
-                            receipt[i][0] = 0; // 창구 비우기
-                            waiting2.add(finishedClient); // 접수 창구 i 순서대로 들어가므로 규칙 만족
+                            receipt[i][0] = 0; // Free the desk
+                            waiting2.add(finishedClient); // Added in reception desk order i, so the rule is satisfied
                         }
                     }
                 }
 
-                // 정비 대기열 -> 정비 창구 배정 (빈 창구는 번호 작은 것부터)
+                // Repair queue -> assign repair desk (empty desks in ascending number)
                 for (int j = 1; j <= M; j++) {
                     if (maintenance[j][0] == 0 && !waiting2.isEmpty()) {
                         int client = waiting2.poll();
                         maintenance[j][0] = client;
                         maintenance[j][1] = b[j];
-                        clientArr[client][1] = j; // 사용한 정비 창구 기록
+                        clientArr[client][1] = j; // Record the repair desk used
                     }
                 }
 
-                // 현재 시각 도착 고객을 접수 대기열에 넣기 (도착 즉시 접수 가능)
+                // Add customers arriving now to the reception queue (can be received on arrival)
                 if (t < arriveAt.length && arriveAt[t] != null) {
                     for (int client : arriveAt[t]) waiting1.add(client);
                 }
 
-                // 접수 대기열 -> 접수 창구 배정
+                // Reception queue -> assign reception desk
                 for (int i = 1; i <= N; i++) {
                     if (receipt[i][0] == 0 && !waiting1.isEmpty()) {
                         int client = waiting1.poll();
                         receipt[i][0] = client;
                         receipt[i][1] = a[i];
-                        clientArr[client][0] = i; // 사용한 접수 창구 기록
+                        clientArr[client][0] = i; // Record the reception desk used
                     }
                 }
 

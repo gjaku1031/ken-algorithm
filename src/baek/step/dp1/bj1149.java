@@ -15,17 +15,17 @@ public class bj1149 {
         N = Integer.parseInt(br.readLine());
         cost = new int[N][3];
 
-        // 입력
+        // Input
         for (int i = 0; i < N; i++) {
             st = new StringTokenizer(br.readLine());
 
-            // cost[집순서][0:R, 1:G, 2:B]
+            // cost[house index][0:R, 1:G, 2:B]
             for (int j = 0; j < 3; j++) {
                 cost[i][j] = Integer.parseInt(st.nextToken());
             }
         }
 
-        // 초기값
+        // Initial values
         int prevR = cost[0][0];
         int prevG = cost[0][1];
         int prevB = cost[0][2];

@@ -92,20 +92,20 @@ public class sw5656 {
             for (int d = 0; d < 4; d++) {
                 int dr = DIR[d][0], dc = DIR[d][1];
 
-                // 현재 벽돌의 power-1 만큼 직선으로 확장
+                // Extend in a straight line by (power-1) of the current brick
                 for (int dist = 1; dist < cur.power; dist++) {
                     int nr = cur.r + dr * dist;
                     int nc = cur.c + dc * dist;
-                    if (!valid(nr, nc)) break; // 범위 밖이면 그 방향 끝
+                    if (!valid(nr, nc)) break; // Out of bounds ends this direction
 
-                    if (b[nr][nc] == 0) continue; // 빈 칸은 통과
+                    if (b[nr][nc] == 0) continue; // Pass through empty cells
 
                     int val = b[nr][nc];
                     if (val > 1) {
-                        // 값이 2 이상이면 큐에 넣고, 즉시 0으로 만들어 중복 처리 방지
+                        // If value >= 2, enqueue it and set to 0 immediately to avoid duplicates
                         q.offer(new Node(nr, nc, val));
                     }
-                    b[nr][nc] = 0; // 1이든 그 이상이든 일단 파괴
+                    b[nr][nc] = 0; // Destroy it whether it is 1 or greater
                 }
             }
         }

@@ -23,7 +23,7 @@ public class bj11659 {
         st = new StringTokenizer(br.readLine());
         for (int i = 0; i < N; i++) {
             arr[i] = Integer.parseInt(st.nextToken());
-            //구간합 배열
+            //prefix sum array
             sum[i] = i == 0 ? arr[i] : sum[i - 1] + arr[i];
         }
 

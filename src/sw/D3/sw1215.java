@@ -33,7 +33,7 @@ public class sw1215 {
     }
 
     static void solve(int r, int c) {
-        // 가로
+        // Horizontal
         if (c + N <= 8) {
             StringBuilder sb1 = new StringBuilder();
             for (int k = 0; k < N; k++) {
@@ -44,7 +44,7 @@ public class sw1215 {
             }
         }
 
-        // 세로
+        // Vertical
         if (r + N <= 8) {
             StringBuilder sb2 = new StringBuilder();
             for (int k = 0; k < N; k++) {

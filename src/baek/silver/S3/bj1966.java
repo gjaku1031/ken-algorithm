@@ -32,7 +32,7 @@ public class bj1966 {
             while (true) {
                 int a = queue.peek();
 
-                if (queue.stream().anyMatch(num -> num > a)) { //현재 인쇄할 종이보다 우선수위 높은 종이가 존재
+                if (queue.stream().anyMatch(num -> num > a)) { //a document with higher priority than the current one exists
                     int b = queue.poll();
                     queue.add(b);
                     if (M == 0) {

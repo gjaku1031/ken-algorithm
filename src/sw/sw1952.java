@@ -16,7 +16,7 @@ public class sw1952 {
     public static void main(String[] args) throws IOException {
         T = Integer.parseInt(br.readLine());
         for (int tc = 1; tc <= T; tc++) {
-            // 입력
+            // Input
             cost = new int[4];
             plan = new int[12];
             dp = new int[13];

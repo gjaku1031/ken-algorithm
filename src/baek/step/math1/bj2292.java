@@ -20,7 +20,7 @@ public class bj2292 {
         }
     }
 
-    //계차
+    //differences between terms
     static int diff(int N) {
         return 6 * N;
     }
