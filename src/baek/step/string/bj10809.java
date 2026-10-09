@@ -1,4 +1,4 @@
-package baek.step.str1ing;
+package baek.step.string;
 
 import java.io.BufferedReader;
 import java.io.IOException;

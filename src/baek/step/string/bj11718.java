@@ -1,4 +1,4 @@
-package baek.step.str1ing;
+package baek.step.string;
 import java.util.Scanner;
 
 public class bj11718 {
